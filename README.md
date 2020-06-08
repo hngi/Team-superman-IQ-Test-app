@@ -9,7 +9,7 @@ create a personal fork of the project repo on Github.
 
  On your local system inside the cloned project, add the original repository as a remote called upstream.
 
- $ git remote add upstream https://github.com/Phoenixik/Team-superman-IQ-Test-app.git
+ $ git remote add upstream https://github.com/hngi/Team-superman-IQ-Test-app.git
 
  Create a new branch to work on. It is recommended for every new feature you work on make a new branch and work from there. 
 
