@@ -1,6 +1,5 @@
 # Team-superman-IQ-Test-app
 team superman app
-
 To contribute to this repo:
 
 create a personal fork of the project repo on Github.
