@@ -1,4 +1,6 @@
 
+import 'package:example/categories/categories_ui.dart';
+import 'package:example/categories/utilities.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -32,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage>{
     _pageController.jumpToPage(page);
   }
 
+  SharedPrefs sharedPrefs = SharedPrefs();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,9 +44,8 @@ class _MyHomePageState extends State<MyHomePage>{
           controller: _pageController,
           onPageChanged: _onPageChanged,
           children: <Widget>[
-            Container(child: Center(
-              child: Text('Home'),
-            )),
+            Container(child: ButtonImplementation(sharedPrefs),
+            ),
             Container(child: Center(child: Text('LeaderBoard'),)),
             Container(child: Center(child: Text('Profile'),))
           ],
