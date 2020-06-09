@@ -110,11 +110,10 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
         left: width * 0.02,
         child: IconButton(
           onPressed: (){
-            Navigator.pop(context);
           },
          icon: Icon(Icons.arrow_back,
           size: 30,
-          color: Colors.black,)
+          color: Colors.transparent,)
         ));
   }
 
