@@ -11,14 +11,14 @@ class SplashTest extends StatefulWidget {
 }
 
 class _SplashTestState extends State<SplashTest> {
-  @override
-  void initState() {
-    super.initState();
-    Timer(Duration(seconds: 5), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => MyHomePage()));
-    });
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Timer(Duration(seconds: 5), () {
+  //     Navigator.push(
+  //         context, MaterialPageRoute(builder: (context) => MyHomePage()));
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,8 @@ class _SplashTestState extends State<SplashTest> {
           _firstVector(height, width),
           _secondVector(height, width),
           _titleVector(height, width),
-          _spinkit(height, width)
+          _spinkit(height, width),
+          _lightVector(height, width)
         ],
       ),
     );
@@ -45,6 +46,20 @@ class _SplashTestState extends State<SplashTest> {
           color: Colors.blue,
           size: 25,
         ));
+  }
+
+  Widget _lightVector(double height, double width) {
+    return Positioned(
+      top: height * 0.26,
+      left: width * 0.25,
+      child: Container(
+          width: width,
+          height: height * 0.5,
+          decoration: BoxDecoration(
+              // color: Colors.red,
+              image:
+                  DecorationImage(image: AssetImage('assets/Vector3.png')))),
+    );
   }
 
   Widget _titleVector(double height, double width) {
