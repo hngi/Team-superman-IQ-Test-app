@@ -35,15 +35,12 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return WillPopScope(
-      onWillPop: () async  => false,
-          child: Scaffold(
-          key: scaffoldKey,
-          backgroundColor: Colors.indigo,
-          body: Stack(
-            children: <Widget>[_backButton(width, height, context), _card(width, height)],
-          )),
-    );
+    return Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Colors.indigo,
+        body: Stack(
+          children: <Widget>[_backButton(width, height, context), _card(width, height)],
+        ));
   }
 
   Widget _card(double width, double height) {
@@ -113,10 +110,11 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
         left: width * 0.02,
         child: IconButton(
           onPressed: (){
+            Navigator.pop(context);
           },
          icon: Icon(Icons.arrow_back,
           size: 30,
-          color: Colors.transparent,)
+          color: Colors.black,)
         ));
   }
 
