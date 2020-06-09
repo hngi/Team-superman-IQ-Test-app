@@ -11,14 +11,14 @@ class SplashTest extends StatefulWidget {
 }
 
 class _SplashTestState extends State<SplashTest> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   Timer(Duration(seconds: 5), () {
-  //     Navigator.push(
-  //         context, MaterialPageRoute(builder: (context) => MyHomePage()));
-  //   });
-  // }
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 5), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => MyHomePage()));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
