@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/iq/android/app/src/debug/debug.iml" filepath="$PROJECT_DIR$/iq/android/app/src/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iq/iq.iml" filepath="$PROJECT_DIR$/iq/iq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iq/android/app/src/main/main.iml" filepath="$PROJECT_DIR$/iq/android/app/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iq/android/app/src/profile/profile.iml" filepath="$PROJECT_DIR$/iq/android/app/src/profile/profile.iml" />
+    </modules>
+  </component>
+</project>
