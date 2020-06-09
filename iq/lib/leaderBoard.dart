@@ -32,7 +32,7 @@ class _LeaderState extends State<Leader> {
                 SizedBox(height: 30,),
                 Text("Duduke Duduke", style: TextStyle(fontSize:  30, color: Colors.white),),
                 SizedBox(height: 30,),
-                Text("Scored: 50/100", style: TextStyle(fontSize:  24, color: Colors.white),),
+                Text("Scored: 51/100", style: TextStyle(fontSize:  24, color: Colors.white),),
 
                 SizedBox(height: 100,),
 
