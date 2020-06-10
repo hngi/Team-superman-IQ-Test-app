@@ -12,7 +12,6 @@ import 'splashTest.dart';
 import 'state/theme.dart';
 import 'state/themeNotifier.dart';
 
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]).then((_) {
