@@ -1,10 +1,15 @@
 import 'package:example/constants/colors.dart';
 import 'package:example/constants/strings.dart';
 import 'package:example/constants/textStyles.dart';
+import 'package:example/core/quiz_page.dart';
+import 'package:example/state/theme.dart';
+import 'package:example/state/themeNotifier.dart';
 import 'package:flutter/material.dart';
 import 'package:custom_radio_button/custom_radio_button.dart';
 import 'package:custom_radio_button/radio_model.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import 'utilities.dart';
 
@@ -22,10 +27,21 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
   var key = "nil";
   String category;
 
+  
+  String username;
+
+  void getName() async{
+    String name = await prefs.getname();
+    setState(() {
+      username = name;
+    });
+  }
+
+
   @override
   void initState() {
     prefs = widget.sharedPrefs;
-
+    getName();
     super.initState();
   }
 
@@ -33,15 +49,19 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
     value ? prefs.setIsTimed(true) : prefs.setIsTimed(false);
   }
 
+  var _darkTheme;
+
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
+    _darkTheme = (themeNotifier.getTheme() == darkTheme);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: backgroundColor,
+        // backgroundColor: backgroundColor,
         body: SafeArea(
           child: Column(
             children: <Widget>[
@@ -52,17 +72,29 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
               SizedBox(height: 10.0),
               _textSelectCategory(),
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  padding: const EdgeInsets.only(right: 18, left: 18),
+                  child: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    CategoryOptions(title: 'Easy'),
-                    CategoryOptions(title: 'Moderate'),
-                    CategoryOptions(title: 'Hard'),
+                    Expanded(
+                      child: Container(
+                        width: width,
+                        height: height,
+                        child: GridView.count(
+                          crossAxisCount: 2,
+                          padding: const EdgeInsets.only(right: 18, left: 18),
+                          children: <Widget>[
+                            CategoryOptions(title: 'Easy'),
+                            CategoryOptions(title: 'Moderate'),
+                            CategoryOptions(title: 'Hard'),
+                          ],
+                        ),
+                      ),
+                    ),
+                    _timer(height, width),
                   ],
                 ),
-              ),
-              _timer(height, width),
+              )),
             ],
           ),
         ),
@@ -81,7 +113,7 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
               Text(
                 'Timer',
                 style: TextStyle(
-                    color: Colors.indigo,
+                    color: _darkTheme ? Colors.green : Colors.indigo,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
@@ -129,7 +161,7 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
           child: Column(
             children: <Widget>[
               SizedBox(height: 10),
-              _textQuote(),
+              Expanded(child: _textQuote()),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
@@ -177,11 +209,17 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
         RichText(
           text: TextSpan(
               text: textGreeting,
-              style: welcomeTextStyle,
+              style: GoogleFonts.poppins(
+                    fontSize: 25,
+                    color: _darkTheme ? Colors.white : Colors.black
+                  ),
               children: <TextSpan>[
                 TextSpan(
-                  text: playerName,
-                  style: playerNameStyle,
+                  text: username != null ?username + '!' : playerName,
+                  style: GoogleFonts.poppins(
+                    fontSize: 25,
+                    color: _darkTheme ? Colors.white : Colors.black
+                  ),
                 )
               ]),
         ),
@@ -251,20 +289,27 @@ class _CategoryOptionsState extends State<CategoryOptions> {
         Expanded(
           child: InkWell(
             onTap: () async {
-              /**
-                 * Replace '/quizpage with the correct route to be navigated after category is chosen
-                 */
-              if (this.widget.title == 'Easy') {
-                await prefs.setCategory('Easy');
+              bool timed = await prefs.getIsTimed();
+              print(timed);
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => QuizPage(timed: timed,)));
+              // /**
+              //    * Replace '/quizpage with the correct route to be navigated after category is chosen
+              //    */
+              // if (this.widget.title == 'Easy') {
+              //   await prefs.setCategory('Easy');
+              //   _navigate(context);
+              // } else if (this.widget.title == 'Moderate') {
+              //   await prefs.setCategory('Moderate');
+              //   _navigate(context);
 
-                // Navigator.pushNamed(context, '/quizPage');
-              } else if (this.widget.title == 'Moderate') {
-                await prefs.setCategory('Moderate');
-                //  Navigator.pushNamed(context, '/quizPage');
-              } else {
-                await prefs.setCategory('Hard');
-                //Navigator.pushNamed(context, '/quizPage');
-              }
+              //   //  Navigator.pushNamed(context, '/quizPage');
+              // } else {
+              //   await prefs.setCategory('Hard');
+              //   _navigate(context);
+
+              //   //Navigator.pushNamed(context, '/quizPage');
+              // }
             },
             child: Card(
                 shape: RoundedRectangleBorder(

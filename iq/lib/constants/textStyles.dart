@@ -2,7 +2,7 @@ import 'package:example/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-var welcomeTextStyle = GoogleFonts.poppins(fontSize: 24, color: textColor);
+var welcomeTextStyle = GoogleFonts.poppins(fontSize: 24,);
 var quoteStyle = GoogleFonts.poppins(
     fontSize: 20, color: textQuoteColor, letterSpacing: 1, height: 1.2);
 var quoteAuthorStyle = GoogleFonts.poppins(fontSize: 16, color: textQuoteColor);
@@ -15,4 +15,4 @@ var categoryName = GoogleFonts.poppins(
     fontSize: 20, color: white, fontWeight: FontWeight.bold);
 var playerNameStyle =
     welcomeTextStyle.copyWith(fontSize: 24, fontWeight: FontWeight.bold);
-var greetingStyle = TextStyle(color: textColor, fontSize: 16);
+var greetingStyle = TextStyle(fontSize: 16);
