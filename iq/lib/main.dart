@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'quizPage.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -11,6 +13,8 @@ class MyApp extends StatefulWidget {
     return _MyAppState();
   }
 }
+
+
 class _MyAppState extends State<MyApp> {
   
   void answerquestion() {
