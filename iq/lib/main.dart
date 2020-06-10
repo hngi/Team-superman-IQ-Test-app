@@ -8,11 +8,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:provider/provider.dart';
 
-import 'categories/test.dart';
+//import 'categories/test.dart';
 import 'splashTest.dart';
 import 'state/theme.dart';
 import 'state/themeNotifier.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,10 +34,10 @@ class MyApp extends StatelessWidget {
     return Consumer<ThemeNotifier>(
       builder: (context, themeNotifier, child) {
         return MaterialApp(
-          title: 'Flutter Demo',
-          theme: themeNotifier.getTheme(),
-          home: SplashTest()
-        );
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: themeNotifier.getTheme(),
+            home: SplashTest());
       },
     );
   }
