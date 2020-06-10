@@ -53,7 +53,9 @@ flutter:
     - assets/Vector.png
     - assets/Vector1.png
     - assets/HigherIQ.png
-    - assets/Vector3.png
+    - assets/easy.png
+    - assets/hard.png
+    - assets/moderate.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
