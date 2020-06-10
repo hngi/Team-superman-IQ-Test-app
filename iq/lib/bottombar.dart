@@ -39,35 +39,38 @@ class _MyHomePageState extends State<MyHomePage>{
   SharedPrefs sharedPrefs = SharedPrefs();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        body: PageView(
-          // physics: NeverScrollableScrollPhysics(),
-          controller: _pageController,
-          onPageChanged: _onPageChanged,
-          children: <Widget>[
-            Container(child: ButtonImplementation(sharedPrefs),
-            ),
-            Container(child: Leader()),
-            Container(child: Settings())
-          ],
-        ),
-        bottomNavigationBar: Container(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
-            child: CupertinoTabBar(
-              
-              onTap: _bottomTapped,
-              currentIndex: _page,
-              backgroundColor: Colors.white,
-              items: <BottomNavigationBarItem>[
-                _bottomNavigationBarItem("Home", 0),
-                _bottomNavigationBarItem("Leaderboard", 1),
-                _bottomNavigationBarItem("Settings", 2),
-              ],
+    return WillPopScope(
+      onWillPop: () async => false,
+          child: Scaffold(
+          // backgroundColor: Colors.white,
+          body: PageView(
+            // physics: NeverScrollableScrollPhysics(),
+            controller: _pageController,
+            onPageChanged: _onPageChanged,
+            children: <Widget>[
+              Container(child: ButtonImplementation(sharedPrefs),
+              ),
+              Container(child: Leader()),
+              Container(child: Settings())
+            ],
+          ),
+          bottomNavigationBar: Container(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: CupertinoTabBar(
+                
+                onTap: _bottomTapped,
+                currentIndex: _page,
+                backgroundColor: Colors.transparent,
+                items: <BottomNavigationBarItem>[
+                  _bottomNavigationBarItem("Home", 0),
+                  _bottomNavigationBarItem("Leaderboard", 1),
+                  _bottomNavigationBarItem("Settings", 2),
+                ],
+              ),
             ),
           ),
-        ),
+      ),
     );
   }
 

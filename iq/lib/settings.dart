@@ -25,11 +25,11 @@ class _SettingsState extends State<Settings> {
         title: Text('Settings', style: GoogleFonts.aBeeZee()),
         leading: IconButton(
             icon: Icon(
-              Icons.arrow_back,
+              Icons.settings,
               // color: Colors.black,
             ),
             onPressed: () {
-              Navigator.pop(context);
+              
             }),
         // backgroundColor: Colors.white,
       ),
@@ -73,109 +73,6 @@ class _SettingsState extends State<Settings> {
                     )
                   ],
                 ),
-                
-               
-                SizedBox(height: 20),
-                Text(
-                  'LEGAL',
-                  style: GoogleFonts.aBeeZee(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800
-                      )
-                ),
-                Divider(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'Terms of Service',
-                      style: GoogleFonts.aBeeZee(
-                        fontSize: 20
-                      )
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.arrow_right,
-                          // color:Colors.black
-                          ),
-                      onPressed: () {},
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'Privacy Policy',
-                      style: GoogleFonts.aBeeZee(
-                        fontSize: 20
-                      )
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.arrow_right,
-                          // color: Colors.black
-                          ),
-                      onPressed: () {},
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'App Licenses',
-                      style: GoogleFonts.aBeeZee(
-                        fontSize: 20
-                      )
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        Icons.arrow_right,
-                        // color: Colors.black,
-                      ),
-                      onPressed: () {},
-                    )
-                  ],
-                ),
-                SizedBox(height: 20),
-                Text(
-                  'CONTACT US',
-                  style: GoogleFonts.aBeeZee(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800
-
-                      )
-                ),
-                Divider(),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Rate Us',
-                  style: GoogleFonts.aBeeZee(
-                        fontSize: 20
-                      )
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Help and Support',
-                  style: GoogleFonts.aBeeZee(
-                        fontSize: 20
-                      )
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Share This App',
-                  style: GoogleFonts.aBeeZee(
-                        fontSize: 20
-                      )
-                ),
-                SizedBox(height: 10),
-                Divider(),
-                SizedBox(height: 30),
               ],
             ),
           ),

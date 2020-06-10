@@ -53,6 +53,8 @@ flutter:
     - assets/Vector.png
     - assets/Vector1.png
     - assets/HigherIQ.png
+    - assets/Vector3.png
+    - assets/question.json
     - assets/easy.png
     - assets/hard.png
     - assets/moderate.png
@@ -80,3 +82,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+

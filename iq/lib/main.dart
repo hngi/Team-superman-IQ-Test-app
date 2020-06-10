@@ -1,18 +1,45 @@
+import 'package:example/bottombar.dart';
+import 'package:example/core/quiz_page.dart';
+import 'package:example/entrance.dart';
 import 'package:flutter/material.dart';
 
-import 'categories/categories_ui.dart';
-import 'categories/utilities.dart';
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(MyApp());
+import 'package:provider/provider.dart';
+
+import 'categories/test.dart';
+import 'splashTest.dart';
+import 'state/theme.dart';
+import 'state/themeNotifier.dart';
+
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]).then((_) {
+    SharedPreferences.getInstance().then((prefs) {
+      var darkModeOn = prefs.getBool('darkMode') ?? true;
+      runApp(
+        ChangeNotifierProvider<ThemeNotifier>(
+          create: (_) => ThemeNotifier(darkModeOn ? darkTheme : lightTheme),
+          child: MyApp(),
+        ),
+      );
+    });
+  });
+}
 
 class MyApp extends StatelessWidget {
-  final SharedPrefs sharedPrefs = SharedPrefs();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Welcome to Flutter',
-      home: ButtonImplementation(sharedPrefs),
+    return Consumer<ThemeNotifier>(
+      builder: (context, themeNotifier, child) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: themeNotifier.getTheme(),
+          home: SplashTest()
+        );
+      },
     );
   }
 }

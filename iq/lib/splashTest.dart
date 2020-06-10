@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:example/categories/utilities.dart';
+import 'package:example/entrance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -11,14 +13,32 @@ class SplashTest extends StatefulWidget {
 }
 
 class _SplashTestState extends State<SplashTest> {
+
+  String username;
   @override
   void initState() {
     super.initState();
+    getName();
     Timer(Duration(seconds: 5), () {
-      Navigator.push(
+      if(username!= null){
+        Navigator.push(
           context, MaterialPageRoute(builder: (context) => MyHomePage()));
+      } else {
+        Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Entrance()));
+      }
+      
     });
   }
+
+  void getName() async{
+    String name = await sharedPrefs.getname();
+    setState(() {
+      username = name;
+    });
+  }
+
+  SharedPrefs sharedPrefs = SharedPrefs();
 
   @override
   Widget build(BuildContext context) {
