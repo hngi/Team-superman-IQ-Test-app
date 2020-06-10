@@ -1,0 +1,690 @@
+[
+    {
+        "category": "Cognitive",
+        "type": "multiple",
+        "difficulty": "moderate",
+        "data": [
+            {
+                "id": 1,
+                "question": "Associate is to colleague as accomplice is to",
+                "incorrect_answer": [
+                    "Consort",
+                    "Friend",
+                    "Comrade"
+                ],
+                "correct_answer": "Accessory",
+                "explanation": ""
+            },
+            {
+                "id": 2,
+                "question": "Which word is most opposite in meaning to the word in capitals? MITIGATE",
+                "incorrect_answer": [
+                    "Palliate",
+                    "Appreciate",
+                    "Destroy"
+                ],
+                "correct_answer":"Augment",
+                "explanation": ""
+            },
+            {
+                "id": 3,
+                "question": "What letter is three to the right of the letter immediately to the left of the letter which is four to the left of the letter G? A B C D E F G H",
+                "incorrect_answer": [
+                    "C",
+                    "D",
+                    "B"
+                ],
+                "correct_answer": "E",
+                "explanation": ""
+            },
+            {
+                "id": 4,
+                "question": "Choose the option that is closest in meaning to the word in capitals? HABITUATED",
+                "incorrect_answer": [
+                    "Constant",
+                    "Colonized",
+                    "Commonplace"
+                ],
+                "correct_answer": "Accustomed",
+                "explanation": ""
+            },
+            {
+                "id": 5,
+                "question": "Newton is to force as joule is to",
+                "incorrect_answer": [
+                    "Velocity",
+                    "Space",
+                    "Current"
+                ],
+                "correct_answer": "Energy",
+                "explanation": ""
+            },
+            {
+                "id": 6,
+                "question": "A boy is 4 years old and his sister is three times as old as he is. When the boy is 12, how old will his sister be?",
+                "incorrect_answer": [
+                    "26",
+                    "18",
+                    "36"
+                ],
+                "correct_answer": "20",
+                "explanation": ""
+            },
+            {
+                "id": 7,
+                "question": "Water is to glass as letter is to...",
+                "incorrect_answer": [
+                    "Pen",
+                    "Post office",
+                    "Paper"
+                ],
+                "correct_answer": "Envelope",
+                "explanation": ""
+            },
+            {
+                "id": 8,
+                "question": "Owen is taller than Luke. Angelo is taller than Owen . Therefore, ________ is the shortest of the three.",
+                "incorrect_answer": [
+                    "John",
+                    "Owen",
+                    "Angelo"
+                ],
+                "correct_answer": "Luke",
+                "explanation": ""
+            },
+            {
+                "id": 9,
+                "question": "Which word in brackets is most opposite in meaning to the word in capital letter REPLETE",
+                "incorrect_answer": [
+                    "open",
+                    "energetic",
+                    "inviting"
+                ],
+                "correct_answer": "barren",
+                "explanation": ""
+            },
+            {
+                "id": 10,
+                "question": "Select two words that are synonyms, plus an antonym of the two selected synonyms, from the list of words: 'spearhead, escort, vanguard, patrol, weapon, stern, space'",
+                "incorrect_answer": [
+                    "Synonyms: escort, patrol  Antonym: stern",
+                    "Synonyms: escort, vanguard  Antonym: space",
+                    "Synonyms: spearhead, weapon  Antonym: patrol"
+                ],
+                "correct_answer": "Synonyms: spearhead, vanguard  Antonym: stern",
+                "explanation": ""
+            },
+            {
+                "id": 11,
+                "question": "You have 3 pills to take every half hour. How long would you use to take all 3?",
+                "incorrect_answer": [
+                    "Half an hour",
+                    "An hour and half",
+                    "Two"
+                ],
+                "correct_answer": "An hour",
+                "explanation": ""
+            },
+            {
+                "id": 12,
+                "question": "How many times can you subtract 10 from 100?",
+                "incorrect_answer": [
+                    "Twice",
+                    "Three times",
+                    "Four times"
+                ],
+                "correct_answer": "Once",
+                "explanation": "Next time you would be subtracting 10 from 90."
+            },
+            {
+                "id": 13,
+                "question": "What is the next letter after N in this series? JFMAMJJASON . . .",
+                "incorrect_answer": [
+                    "B",
+                    "C",
+                    "F"
+                ],
+                "correct_answer": "D",
+                "explanation": ""
+            },
+            {
+                "id": 14,
+                "question": "In a race, just before the finish line, you get past the person in  second place. In what place would you finish?",
+                "incorrect_answer": [
+                    "1st place",
+                    "3rd place",
+                    "4th place"
+                ],
+                "correct_answer": "2nd place",
+                "explanation": ""
+            },
+            {
+                "id": 15,
+                "question": "Which president is on the U.S. $100 bill?",
+                "incorrect_answer": [
+                    "John F Kennedy",
+                    "George Bush",
+                    "Abraham Lincoln"
+                ],
+                "correct_answer": "None",
+                "explanation": "Benjamin Franklin whose picture is on the bill was never a president."
+            }
+        ]
+    },
+    {
+        "category": "Arithmetics",
+        "type": "multiple",
+        "difficulty": "moderate",
+        "data": [
+            {
+                "id": 1,
+                "question": "I have 20 oranges in total, I gave Ade 7 and Dimma 10 oranges. How many oranges do I have left?",
+                "incorrect_answer": [
+                    "2",
+                    "4",
+                    "5"
+                ],
+                "correct_answer": "3",
+                "explanation": ""
+            },
+            {
+                "id": 2,
+                "question": "8 is to 4 as 20 is to?",
+                "incorrect_answer": [
+                    "9",
+                    "8",
+                    "7"
+                ],
+                "correct_answer": "10",
+                "explanation": ""
+            },
+            {
+                "id": 3,
+                "question": "Fill the blank spaces; 19=8, 6=3, 70=7, 8=5, 4=4, 60=5, 15=7, 16=? 17=?",
+                "incorrect_answer": [
+                    "7",
+                    "11",
+                    "13"
+                ],
+                "correct_answer": "9",
+                "explanation": "16 = 7 and 17 = 9 because the number of letters in the spelling sixteen is 7 and those of seventeen is 9"
+            },
+            {
+                "id": 4,
+                "question": "The water level in a reservoir is low, but doubles every day. It takes 30 days to fill the reservoir. How long does it take for the reservoir to become half full?",
+                "incorrect_answer": [
+                    "10",
+                    "15",
+                    "25"
+                ],
+                "correct_answer": "29",
+                "explanation": ""
+            },
+            {
+                "id": 5,
+                "question": "Divide 20 by half and add 20, what would the answer be?",
+                "incorrect_answer": [
+                    "30",
+                    "40",
+                    "50"
+                ],
+                "correct_answer": "60",
+                "explanation": ""
+            },
+            {
+                "id": 6,
+                "question": "A man had 15 cows, all but 6 died. How many are alive?",
+                "incorrect_answer": [
+                    "9",
+                    "0",
+                    "15"
+                ],
+                "correct_answer": "6",
+                "explanation": ""
+            },
+            {
+                "id": 7,
+                "question": "In the two numerical sequences below, one number that appears in the top sequence should appear in the bottom sequence and vice versa. Which two numbers should be changed round? 100, 89, 76, 63, 44, 25, 105, 93, 79, 61, 45, 25",
+                "incorrect_answer": [
+                    "63 & 45",
+                    "76 & 79",
+                    "89 & 93"
+                ],
+                "correct_answer": "63 & 61",
+                "explanation": ""
+            },
+            {
+                "id": 8,
+                "question": "3…..5…….8……..12…….17…? What number comes next?",
+                "incorrect_answer": [
+                    "24",
+                    "19",
+                    "28"
+                ],
+                "correct_answer": "23",
+                "explanation": ""
+            },
+            {
+                "id": 9,
+                "question": "A man ran 18 miles in 30 minutes. How many miles per hour did he run?",
+                "incorrect_answer": [
+                    "40",
+                    "32",
+                    "42"
+                ],
+                "correct_answer": "36",
+                "explanation": ""
+            },
+            {
+                "id": 10,
+                "question": "Complete the series of numbers: 1 10, 3 9, 5 8, 7 7, 9 6, __ __.",
+                "incorrect_answer": [
+                    "10 6",
+                    "10 5",
+                    "11 7"
+                ],
+                "correct_answer": "11 5",
+                "explanation": ""
+            },
+            {
+                "id": 11,
+                "question": "What numbers should replace the question marks? 100, 95, ?, 79, 68, ?, 40, 23.",
+                "incorrect_answer": [
+                    "80 & 63",
+                    "88 & 50",
+                    "80 & 60"
+                ],
+                "correct_answer": "88 & 55",
+                "explanation": ""
+            },
+            {
+                "id": 12,
+                "question": "What number should replace the question mark?        10, 21, 33, 46, 60, 75, ?",
+                "incorrect_answer": [
+                    "90",
+                    "93",
+                    "89"
+                ],
+                "correct_answer": "91",
+                "explanation": ""
+            },
+            {
+                "id": 13,
+                "question": "What number comes next in this sequence?   25, 32, 27, 36, ?",
+                "incorrect_answer": [
+                    "45",
+                    "31",
+                    "43"
+                ],
+                "correct_answer": "27",
+                "explanation": ""
+            },
+            {
+                "id": 14,
+                "question": "What is 15 multiplied by 11?",
+                "incorrect_answer": [
+                    "155",
+                    "175",
+                    "185"
+                ],
+                "correct_answer": "165",
+                "explanation": ""
+            },
+            {
+                "id": 15,
+                "question": "What is 45% of 300?",
+                "incorrect_answer": [
+                    "120",
+                    "130",
+                    "125"
+                ],
+                "correct_answer": "135",
+                "explanation": ""
+            }
+        ]
+    },
+    {
+        "category": "General",
+        "type": "multiple",
+        "difficulty": "moderate",
+        "data": [
+            {
+                "id": 1,
+                "question": "At a conference, 12 members shook hands with each other before & after the meeting. How many total numbers of handshakes occurred?",
+                "incorrect_answer": [
+                    "100",
+                    "145",
+                    "144"
+                ],
+                "correct_answer": "132",
+                "explanation": ""
+            },
+            {
+                "id": 2,
+                "question": "The day after the day after tomorrow is four days before Monday. What day is it today?",
+                "incorrect_answer": [
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday"
+                ],
+                "correct_answer": "Monday",
+                "explanation": ""
+            },
+            {
+                "id": 3,
+                "question": "Forest is to tree as tree is to ?",
+                "incorrect_answer": [
+                    "Plant",
+                    "Branch",
+                    "Mangrove"
+                ],
+                "correct_answer": "Leaf",
+                "explanation": ""
+            },
+            {
+                "id": 4,
+                "question": "Some months have 31 days, others have 30 days, but how many have 28 days?",
+                "incorrect_answer": [
+                    "1",
+                    "6",
+                    "None"
+                ],
+                "correct_answer": "all",
+                "explanation": ""
+            },
+            {
+                "id": 5,
+                "question": "How many birthdays does the average man have?",
+                "incorrect_answer": [
+                    "Zero",
+                    "Two",
+                    "Three"
+                ],
+                "correct_answer": "One",
+                "explanation": "the day you were born"
+            },
+            {
+                "id": 6,
+                "question": "Two men play seven games of checkers. Each man wins the same number if games. There are no ties, why?",
+                "incorrect_answer": [
+                    "Both men evened other out",
+                    "Something is wrong",
+                    "I don’t know"
+                ],
+                "correct_answer": "They never played",
+                "explanation": ""
+            },
+            {
+                "id": 7,
+                "question": "The Smith family has a mother, father and 4 daughters. Each daughter has one brother. How many people are in the family?",
+                "incorrect_answer": [
+                    "6",
+                    "8",
+                    "11"
+                ],
+                "correct_answer": "7",
+                "explanation": ""
+            },
+            {
+                "id": 8,
+                "question": "Put the following words into alphabetical order: arthropod, artificer, arteriole, artichoke, arthritis, articular, artillery, arthritic",
+                "incorrect_answer": [
+                    "arteriole, arthritic, arthritis, arthropod, articular, artichoke, artificer, artillery",
+                    "arteriole, articular, artichoke, artificer, artillery, arthritic, arthritis, arthropod",
+                    "arteriole, arthritic, arthritis, arthropod, artichoke, articular, artillery, artificer"
+                ],
+                "correct_answer": "arteriole, arthritic, arthritis, arthropod, artichoke, articular, artificer, artillery",
+                "explanation": ""
+            },
+            {
+                "id": 9,
+                "question": "Which two words are most opposite in meaning? imaginary, realistic, illegible, impracticable, radical, embellished ",
+                "incorrect_answer": [
+                    "Imaginary, realistic",
+                    "Realistic, illegible",
+                    "Illegible, impracticable"
+                ],
+                "correct_answer": "Realistic, impracticable",
+                "explanation": ""
+            },
+            {
+                "id": 10,
+                "question": "Which group of letters is the odd one out? CEFH LNOQ UWXZ HJKN PRSU DFGI",
+                "incorrect_answer": [
+                    "CEFH",
+                    "LNOQ",
+                    "HJKN"
+                ],
+                "correct_answer": "PRSU",
+                "explanation": "it follows the pattern HiJKlmN; the rest follow the pattern CdEFgH"
+            },
+            {
+                "id": 11,
+                "question": "Identify two words (one from each set of brackets) that form a connection (analogy) when paired with the words in capitals. RESTRAIN (suppress, deny, conceal) WITHHOLD (curb, reserve, conceal)",
+                "incorrect_answer": [
+                    "Suppress, conceal",
+                    "Deny, conceal",
+                    "Conceal, curb"
+                ],
+                "correct_answer": "Suppress, reserve",
+                "explanation": ""
+            },
+            {
+                "id": 12,
+                "question": "Book is reading as spoon is to?",
+                "incorrect_answer": [
+                    "Sweeping",
+                    "Writing",
+                    "Dancing"
+                ],
+                "correct_answer": "Eating",
+                "explanation": ""
+            },
+            {
+                "id": 13,
+                "question": "Which of the following is least like the others?",
+                "incorrect_answer": [
+                    "Opossums",
+                    "Sloths",
+                    "Squirrels"
+                ],
+                "correct_answer": "Horse",
+                "explanation": ""
+            },
+            {
+                "id": 14,
+                "question": "Associate is to colleague as accomplice is to",
+                "incorrect_answer": [
+                    "Breathe",
+                    "Loved",
+                    "Guest"
+                ],
+                "correct_answer": "Devil",
+                "explanation": ""
+            },
+            {
+                "id": 15,
+                "question": "What number is, logically, missing from this sequence?        348269, 284315, *****, 8438, 4811, 842, 86",
+                "incorrect_answer": [
+                    "134322",
+                    "89943",
+                    "112933"
+                ],
+                "correct_answer": "34826",
+                "explanation": ""
+            }
+        ]
+    },
+    {
+        "category": "Geography",
+        "type": "multiple",
+        "difficulty": "moderate",
+        "data": [
+            {
+                "id": 1,
+                "question": "Which represents SOUTHWEST?",
+                "incorrect_answer": [
+                    "SE",
+                    "NW",
+                    "NE"
+                ],
+                "correct_answer": "SW",
+                "explanation": ""
+            },
+            {
+                "id": 2,
+                "question": "What is the largest desert in Africa?",
+                "incorrect_answer": [
+                    "Atacama Desert",
+                    "Monte Desert",
+                    "carcross Desert"
+                ],
+                "correct_answer": "Sahara Desert",
+                "explanation": ""
+            },
+            {
+                "id": 3,
+                "question": "It is a largely agricultural country of varied scenery from moorland, loughs and islands to the beautiful coastline around West Bay. One word has been removed from the passage above. Select that word from the choice below and reinstate it into its correct place in the passage.",
+                "incorrect_answer": [
+                    "Eastern",
+                    "Diverse",
+                    "Cold"
+                ],
+                "correct_answer": "Bleak",
+                "explanation": ""
+            },
+            {
+                "id": 4,
+                "question": "Starting from North, list the following compass points in the correct order working anti-clockwise: ENE WSW SE SSW WNW NNE SSE ESE",
+                "incorrect_answer": [
+                    "WSW, WNW,SSW,SSE,SE, ENE, ESE, NNE",
+                    "WNW,WSW,NNE,SSE,SSW,ENE,ESE,SE",
+                    "WNW,NNE,WSW,SSE,SSW,SE,ESE,ENE"
+                ],
+                "correct_answer": "WNW, WSW, SSW, SSE, SE, ESE, ENE, NNE",
+                "explanation": ""
+            },
+            {
+                "id": 5,
+                "question": "Angola is to Africa as Andorra is to",
+                "incorrect_answer": [
+                    "Australia",
+                    "Asia",
+                    "South America"
+                ],
+                "correct_answer": "Europe",
+                "explanation": ""
+            },
+            {
+                "id": 6,
+                "question": "Solar is to panel as Wind is to:",
+                "incorrect_answer": [
+                    "Blower",
+                    "Generator",
+                    "Propeller"
+                ],
+                "correct_answer": "Turbine",
+                "explanation": ""
+            },
+            {
+                "id": 7,
+                "question": "Kilimanjaro is to Tanzania as Makalu is to",
+                "incorrect_answer": [
+                    "Congo",
+                    "Chile",
+                    "Brazil"
+                ],
+                "correct_answer": "Himalayas",
+                "explanation": ""
+            },
+            {
+                "id": 8,
+                "question": "Odin is to Norse and Ares is to..",
+                "incorrect_answer": [
+                    "Zulu",
+                    "Hindu",
+                    "Egypt"
+                ],
+                "correct_answer": "Greek",
+                "explanation": ""
+            },
+            {
+                "id": 9,
+                "question": "At noon and midnight the hour and minute hands are exactly coincident with each other. How many other times between noon and midnight do the hour and minute hands cross?",
+                "incorrect_answer": [
+                    "Five times",
+                    "Eight times",
+                    "Three times"
+                ],
+                "correct_answer": "Ten times",
+                "explanation": ""
+            },
+            {
+                "id": 10,
+                "question": "Which is the smallest planet in the solar system?",
+                "incorrect_answer": [
+                    "Mars",
+                    "Earth",
+                    "Pluto"
+                ],
+                "correct_answer": "Mercury",
+                "explanation": ""
+            },
+            {
+                "id": 11,
+                "question": "The hottest planet is",
+                "incorrect_answer": [
+                    "Pluto",
+                    "Neptune",
+                    "Saturn"
+                ],
+                "correct_answer": "Venus",
+                "explanation": ""
+            },
+            {
+                "id": 12,
+                "question": "When the earth covers the sun, what occurs?",
+                "incorrect_answer": [
+                    "Lunar eclipse",
+                    "Solar energy",
+                    "Solar panel"
+                ],
+                "correct_answer": "Solar eclipse",
+                "explanation": ""
+            },
+            {
+                "id": 13,
+                "question": "Which planet is known as the “dwarf” planet?",
+                "incorrect_answer": [
+                    "Venus",
+                    "Earth",
+                    "Mercury"
+                ],
+                "correct_answer": "Pluto",
+                "explanation": ""
+            },
+            {
+                "id": 14,
+                "question": "Which Nigerian state is known as the confluence state?",
+                "incorrect_answer": [
+                    "Niger",
+                    "Edo",
+                    "Benue"
+                ],
+                "correct_answer": "Kogi",
+                "explanation": ""
+            },
+            {
+                "id": 15,
+                "question": "The amalgamation of the northern and southern protectorate of Nigeria took place when?",
+                "incorrect_answer": [
+                    "1912",
+                    "1910",
+                    "1915"
+                ],
+                "correct_answer": "1914",
+                "explanation": ""
+            }
+        ]
+    }
+]
