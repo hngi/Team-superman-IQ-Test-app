@@ -26,6 +26,8 @@ dependencies:
   shared_preferences: ^0.5.7+3
   custom_radio_button: ^0.0.3
   flutter_spinkit: ^2.1.0
+  provider:
+  google_fonts: ^1.1.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -51,6 +53,7 @@ flutter:
     - assets/Vector.png
     - assets/Vector1.png
     - assets/HigherIQ.png
+    - assets/Vector3.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
