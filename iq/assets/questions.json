@@ -1,0 +1,237 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which river flows through the Scottish city of Glasgow?",
+      "correct_answer": "Clyde",
+      "incorrect_answers": [
+        "Tay",
+        "Dee",
+        "Tweed"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What does a funambulist walk on?",
+      "correct_answer": "A Tight Rope",
+      "incorrect_answers": [
+        "Broken Glass",
+        "Balls",
+        "The Moon"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Rolex is a company that specializes in what type of product?",
+      "correct_answer": "Watches",
+      "incorrect_answers": [
+        "Cars",
+        "Computers",
+        "Sports equipment"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Furby was released in 1998.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "There are 86400 seconds in a day.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Before the 19th Century, the &quot;Living Room&quot; was originally called the...",
+      "correct_answer": "Parlor",
+      "incorrect_answers": [
+        "Open Room",
+        "Sitting Room",
+        "Loft"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the Italian word for &quot;tomato&quot;?",
+      "correct_answer": "Pomodoro",
+      "incorrect_answers": [
+        "Aglio",
+        "Cipolla",
+        "Peperoncino"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the name of the popular animatronic singing fish prop, singing such hits such as &quot;Don&#039;t Worry, Be Happy&quot;?",
+      "correct_answer": "Big Mouth Billy Bass",
+      "incorrect_answers": [
+        "Big Billy Bass",
+        "Singing Fish",
+        "Sardeen"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "The average woman is 5 inches \/ 13 centimeters shorter than the average man.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "According to the United States&#039; CDC, one in how many Americans die annually due to smoking?",
+      "correct_answer": "Five",
+      "incorrect_answers": [
+        "Twenty",
+        "Ten",
+        "One hundred"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "The new One World Trade Center in Manhattan, New York City was designed by which architect? ",
+      "correct_answer": "David Childs",
+      "incorrect_answers": [
+        "Bjarke Ingels",
+        "Michael Arad",
+        "Fumihiko Maki"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which one of these Swedish companies was founded in 1943?",
+      "correct_answer": "IKEA",
+      "incorrect_answers": [
+        "H &amp; M",
+        "Lindex",
+        "Clas Ohlson"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Fast food restaurant chains Carl&#039;s Jr. and Hardee&#039;s are owned by the same company.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What do the letters of the fast food chain KFC stand for?",
+      "correct_answer": "Kentucky Fried Chicken",
+      "incorrect_answers": [
+        "Kentucky Fresh Cheese",
+        "Kibbled Freaky Cow",
+        "Kiwi Food Cut"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "According to the 2014-2015 Australian Bureau of Statistics, what percentage of Australians were born overseas?",
+      "correct_answer": "28%",
+      "incorrect_answers": [
+        "13%",
+        "20%",
+        "7%"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Computer manufacturer Compaq was acquired for $25 billion dollars in 2002 by which company?",
+      "correct_answer": "Hewlett-Packard",
+      "incorrect_answers": [
+        "Toshiba",
+        "Asus",
+        "Dell"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Where is Apple Inc. headquartered?",
+      "correct_answer": "Cupertino, California",
+      "incorrect_answers": [
+        "Redwood City, California",
+        "Redmond, Washington",
+        "Santa Monica, CA"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of the following is the IATA code for Manchester Airport?",
+      "correct_answer": "MAN",
+      "incorrect_answers": [
+        "EGLL",
+        "LHR",
+        "EGCC"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What was the name given to Japanese military dictators who ruled the country through the 12th and 19th Century?",
+      "correct_answer": "Shogun",
+      "incorrect_answers": [
+        "Ninja",
+        "Samurai",
+        "Shinobi"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the full title of the Prime Minister of the UK?",
+      "correct_answer": "First Lord of the Treasury",
+      "incorrect_answers": [
+        "Duke of Cambridge",
+        "Her Majesty&#039;s Loyal Opposition",
+        "Manager of the Crown Estate"
+      ]
+    }
+  ]
+}
