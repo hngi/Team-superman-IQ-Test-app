@@ -5,8 +5,6 @@ import 'package:example/core/quiz_page.dart';
 import 'package:example/state/theme.dart';
 import 'package:example/state/themeNotifier.dart';
 import 'package:flutter/material.dart';
-import 'package:custom_radio_button/custom_radio_button.dart';
-import 'package:custom_radio_button/radio_model.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
