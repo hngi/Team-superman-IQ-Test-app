@@ -1,4 +1,6 @@
-
+import 'package:example/constants/colors.dart';
+import 'package:example/constants/strings.dart';
+import 'package:example/constants/textStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:custom_radio_button/custom_radio_button.dart';
 import 'package:custom_radio_button/radio_model.dart';
@@ -37,160 +39,284 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
     double height = MediaQuery.of(context).size.height;
     return WillPopScope(
       onWillPop: () async => false,
-          child: Scaffold(
-          key: scaffoldKey,
-          backgroundColor: Colors.indigo,
-          body: Stack(
-            children: <Widget>[_backButton(width, height, context), _card(width, height)],
-          )),
-    );
-  }
-
-  Widget _card(double width, double height) {
-    return Positioned(
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 48.0),
-          child: Container(
-            width: width * 0.9,
-            height: height * 0.75,
-            // color: Colors.red,
-            child: Card(
-              color: Colors.white,
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Column(
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: backgroundColor,
+        body: SafeArea(
+          child: Column(
+            children: <Widget>[
+              _profileIcon(),
+              _welcomeText(),
+              SizedBox(height: 10),
+              _quoteBlock(height, width),
+              SizedBox(height: 10.0),
+              _textSelectCategory(),
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  padding: const EdgeInsets.only(right: 18, left: 18),
                   children: <Widget>[
-                    _text(),
-                    SizedBox(height: 0),
-                    Expanded(child: _test(context)),
-                    // Expanded(child: _buttonContainers(width, height)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(left: 18.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text(
-                                'Timer',
-                                style: TextStyle(
-                                  color: Colors.indigo,
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              Switch(
-                                onChanged: (value) {
-                                  setState(() {
-                                    isTimed = value;
-
-                                    checkIsTimed(isTimed);
-                                  });
-                                },
-                                value: isTimed,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(child: _nextButton(width, height, context))
-                      ],
-                    )
+                    CategoryOptions(title: 'Easy'),
+                    CategoryOptions(title: 'Moderate'),
+                    CategoryOptions(title: 'Hard'),
                   ],
                 ),
               ),
-            ),
+              _timer(height, width),
+            ],
           ),
         ),
       ),
     );
   }
 
-  Widget _backButton(double width, double height, context) {
-    return Positioned(
-        top: height * 0.07,
-        left: width * 0.02,
-        child: IconButton(
-          onPressed: (){
-          },
-         icon: Icon(Icons.arrow_back,
-          size: 30,
-          color: Colors.transparent,)
-        ));
+  Widget _timer(height, width) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: <Widget>[
+              Text(
+                'Timer',
+                style: TextStyle(
+                    color: Colors.indigo,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              Switch(
+                onChanged: (value) {
+                  setState(() {
+                    isTimed = value;
+
+                    checkIsTimed(isTimed);
+                  });
+                },
+                value: isTimed,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 
-  Widget _nextButton(double width, double height, BuildContext context) {
-    return Align(
-      alignment: Alignment.bottomRight,
+  Widget _welcomeText() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 19.0),
+      child: Column(
+        children: <Widget>[
+          _texGreeting(),
+          _textWelcome(),
+        ],
+      ),
+    );
+  }
+
+  Widget _quoteBlock(height, width) {
+    return Padding(
+      padding: const EdgeInsets.all(0.0),
       child: Container(
+        height: height * .13,
+        width: width,
         decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20))),
-        width: width * 0.32,
-        height: height * 0.1,
-        child: MaterialButton(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(20),
-                    topLeft: Radius.circular(20))),
-            child: Text(
-              'Next',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
-            color: Colors.blue,
-            onPressed: () async {
-              if (category == null) {
-                scaffoldKey.currentState.showSnackBar(SnackBar(
-                  backgroundColor: Colors.red,
-                  content: Text('Please select a Category'),
-                ));
-              } else {
-                print(category);
-                Navigator.pushNamed(context, '');
-              }
-            }),
+          color: blue,
+        ),
+        child: Container(
+          // padding: const EdgeInsets.all(8.0),
+          margin: EdgeInsets.all(8.0),
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 10),
+              _textQuote(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  _textQuoteAuthor(),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 
-
-  Widget _test(BuildContext context) {
-    List<RadioModel> priorityList = new List<RadioModel>();
-    priorityList.add(new RadioModel(false, null, 'Easy', Colors.redAccent));
-    priorityList
-        .add(new RadioModel(false, null, 'Moderate', Colors.deepPurple));
-    priorityList.add(new RadioModel(false, null, 'Hard', Colors.blueAccent));
-    return Container(
-      // width: 1000,
-      child: CustomRadioGroupWidget(
-        onChanged: (value) {
-          print(value);
-          prefs.setCategory(value);
-          category = value;
-        },
-        isSquareRadioGroup: false,
-        radioList: priorityList,
+  Widget _textSelectCategory() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            selectACategory,
+            style: selectCategory,
+          ),
+        ],
       ),
     );
   }
 
-  // void getvalue(dynamic value) {
-  //   prefs.setCategory(value);
+  Widget _textWelcome() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          textWelcome,
+          style: greetingStyle,
+        ),
+      ],
+    );
+  }
 
-  //   _selectedValue = value;
-  // }
+  Widget _texGreeting() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        RichText(
+          text: TextSpan(
+              text: textGreeting,
+              style: welcomeTextStyle,
+              children: <TextSpan>[
+                TextSpan(
+                  text: playerName,
+                  style: playerNameStyle,
+                )
+              ]),
+        ),
+      ],
+    );
+  }
 
-  Widget _text() {
+  Widget _textQuote() {
     return Text(
-      'Select a Category',
-      style: TextStyle(
-          fontSize: 30, fontWeight: FontWeight.bold, color: Colors.indigo),
+      quote,
+      style: quoteStyle,
+    );
+  }
+
+  Widget _textQuoteAuthor() {
+    return Text(
+      quoteAuthor,
+      style: quoteAuthorStyle,
+    );
+  }
+
+  Widget _profileIcon() {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 16.0,
+        left: 16.0,
+        right: 16.0,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          Container(
+            child: Icon(
+              Icons.account_circle,
+              size: 48,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CategoryOptions extends StatefulWidget {
+  final String title;
+  final GestureTapCallback onTap;
+
+  const CategoryOptions({
+    Key key,
+    @required this.title,
+    this.onTap,
+  }) : super(key: key);
+
+  @override
+  _CategoryOptionsState createState() => _CategoryOptionsState();
+}
+
+class _CategoryOptionsState extends State<CategoryOptions> {
+  SharedPrefs prefs = SharedPrefs();
+  bool _selected = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        SizedBox(height: 20),
+        Expanded(
+          child: InkWell(
+            onTap: () async {
+              /**
+                 * Replace '/quizpage with the correct route to be navigated after category is chosen
+                 */
+              if (this.widget.title == 'Easy') {
+                await prefs.setCategory('Easy');
+
+                // Navigator.pushNamed(context, '/quizPage');
+              } else if (this.widget.title == 'Moderate') {
+                await prefs.setCategory('Moderate');
+                //  Navigator.pushNamed(context, '/quizPage');
+              } else {
+                await prefs.setCategory('Hard');
+                //Navigator.pushNamed(context, '/quizPage');
+              }
+            },
+            child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                child: Container(
+                  width: 200,
+                  height: 200,
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: this.widget.title == 'Easy'
+                                ? cardEasyColor
+                                : this.widget.title == 'Moderate'
+                                    ? cardModerateColor
+                                    : cardHardColor),
+                      ),
+                      _column()
+                    ],
+                  ),
+                )),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _column() {
+    return Align(
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+                // color: Colors.red,
+                image: DecorationImage(
+                    image: this.widget.title == 'Easy'
+                        ? AssetImage('assets/easy.png')
+                        : this.widget.title == 'Moderate'
+                            ? AssetImage('assets/moderate.png')
+                            : AssetImage('assets/hard.png'))),
+          ),
+          Text(
+            this.widget.title,
+            style: categoryName,
+          )
+        ],
+      ),
     );
   }
 }
