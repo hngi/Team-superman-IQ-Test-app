@@ -1,6 +1,8 @@
 
 import 'package:example/categories/categories_ui.dart';
 import 'package:example/categories/utilities.dart';
+import 'package:example/leaderBoard.dart';
+import 'package:example/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -46,8 +48,8 @@ class _MyHomePageState extends State<MyHomePage>{
           children: <Widget>[
             Container(child: ButtonImplementation(sharedPrefs),
             ),
-            Container(child: Center(child: Text('LeaderBoard'),)),
-            Container(child: Center(child: Text('Profile'),))
+            Container(child: Leader()),
+            Container(child: Settings())
           ],
         ),
         bottomNavigationBar: Container(
@@ -61,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage>{
               items: <BottomNavigationBarItem>[
                 _bottomNavigationBarItem("Home", 0),
                 _bottomNavigationBarItem("Leaderboard", 1),
-                _bottomNavigationBarItem("Profile", 2),
+                _bottomNavigationBarItem("Settings", 2),
               ],
             ),
           ),
