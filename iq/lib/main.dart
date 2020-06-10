@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'leaderBoard.dart';
 import 'quizPage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Leader());
 }
 
 class MyApp extends StatefulWidget {
