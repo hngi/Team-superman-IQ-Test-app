@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'quiz_page.dart';
 
 import 'leaderBoard.dart';
 import 'quizPage.dart';
 
 void main() {
-  runApp(Leader());
+  runApp(MyApp());
 }
+
 
 class MyApp extends StatefulWidget {
   @override
@@ -22,34 +24,23 @@ class _MyAppState extends State<MyApp> {
     setState(() {} );
     print ("answer chosen");
   }
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('flutter'),
-        ),
-        body: Column(
-          children: <Widget>[
-            Text('The question'),
-            RaisedButton(
-              child: Text('answer 1'),
-              onPressed: answerquestion,
-            ),
-            RaisedButton(
-              child: Text('answer 2'),
-              onPressed: () {
-                //..
-                print ('answer 2 chosen');
-              },
-            ),
-            RaisedButton(
-              child: Text('answer 3'),
-              onPressed: answerquestion,
-            ),
-          ],
-        ),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: QuizPage(
+        category: "Arithmetics",
+        timed: true,
       ),
     );
   }
 }
+
+
