@@ -185,7 +185,7 @@
         ]
     },
     {
-        "category": "cognitive",
+        "category": "Cognitive",
         "type": "multiple",
         "difficulty": "easy",
         "data": [
@@ -527,7 +527,7 @@
         ]
     },
     {
-        "category": "general",
+        "category": "General",
         "type": "multiple",
         "difficulty": "easy",
         "data": [

@@ -290,7 +290,7 @@ class _CategoryOptionsState extends State<CategoryOptions> {
               bool timed = await prefs.getIsTimed();
               print(timed);
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => QuizPage(timed: timed,)));
+                  context, MaterialPageRoute(builder: (context) => QuizPage(timed: true, category: widget.title,)));
               // /**
               //    * Replace '/quizpage with the correct route to be navigated after category is chosen
               //    */
