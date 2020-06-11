@@ -1,0 +1,581 @@
+[
+    {
+        "category": "Cognitive",
+        "type": "multiple",
+        "difficulty": "difficult",
+        "data": [
+            {
+                "id": 1,
+                "question": "Which is the odd one out?",
+                "incorrect_answer": [
+                    "Famous",
+                    "Illustrious",
+                    "Acclaimed"
+                ],
+                "correct_answer": "Fabulous",
+                "explanation": ""
+            },
+            {
+                "id": 2,
+                "question": "Which two words are closest in meaning?",
+                "incorrect_answer": [
+                    "Educated & clear",
+                    "Clear & literal",
+                    "Enervated & wordy"
+                ],
+                "correct_answer": "Literal & verbatim",
+                "explanation": ""
+            },
+            {
+                "id": 3,
+                "question": "Joe has one and a half times as many as Mo, and Mo has one and a half times as many as Flo. Altogether they have 76. How many has each?",
+                "incorrect_answer": [
+                    "Joe 26, Mo 34, Flo 16",
+                    "Joe 38, Mo 22, Flo 14",
+                    "Joe 28, Mo 30, Flo 18"
+                ],
+                "correct_answer": "Joe 36, Mo 24, Flo 16",
+                "explanation": ""
+            },
+            {
+                "id": 4,
+                "question": "Which one of the following sentences is correct?",
+                "incorrect_answer": [
+                    "The Gardener’s Association debated whether to hold it’s bi-annual flower show at the beginning of April and September, or at the end of April and September each year.",
+                    "The Gardeners’ Association debated whether to hold its biennial flower show at the beginning of April and September, or at the end of April and September each year.",
+                    "The Gardener’s Association debated whether to hold it’s biennial flower show at the beginning of April and September, or at the end of April and September each year."
+                ],
+                "correct_answer": "The Gardeners’ Association debated whether to hold its bi-annual flower show at the beginning of April and September, or at the end of April and September each year.",
+                "explanation": ""
+            },
+            {
+                "id": 5,
+                "question": "What is the synonym of the word ESPOUSAL?",
+                "incorrect_answer": [
+                    "Avoidance",
+                    "Outburst",
+                    "Care"
+                ],
+                "correct_answer": "Adoption",
+                "explanation": ""
+            },
+            {
+                "id": 6,
+                "question": "The school ______ tried to persuade the police not to (7) __________________ the boys for what had been a (8) ________ lapse in their good behavior.  Insert three of the following words into the passage in order for it to read correctly: momentous, prosecute, principle, persecute, principal, momentary",
+                "incorrect_answer": [
+                    "Principle, persecute, momentary",
+                    "Principal, persecute, momentous",
+                    "Principle, prosecute, momentous"
+                ],
+                "correct_answer": "Principal, prosecute, momentary",
+                "explanation": ""
+            },
+            {
+                "id": 7,
+                "question": "A man dressed in all black is walking down a country lane. Suddenly, a large black car without any lights on comes round the corner and screeches to a halt. How did the car know he was there? ",
+                "incorrect_answer": [
+                    "His headlights",
+                    "The colour of his clothes",
+                    "The man had a torch light with him"
+                ],
+                "correct_answer": "It was day time",
+                "explanation": ""
+            },
+            {
+                "id": 8,
+                "question": "Take 6 apples from 10 apples, what would you have? (6)",
+                "incorrect_answer": [
+                    "4",
+                    "10",
+                    "60"
+                ],
+                "correct_answer": "6",
+                "explanation": ""
+            },
+            {
+                "id": 9,
+                "question": "Can you find the the mistake “1, 2, 3, 4, 5, 6, 7, 8, 9”.",
+                "incorrect_answer": [
+                    "Mistake",
+                    "No Mistake",
+                    ""
+                ],
+                "correct_answer": "“The” was repeated",
+                "explanation": ""
+            },
+            {
+                "id": 10,
+                "question": "John is a butcher. He is 5’ 10” tall and wears a size 11 shoe. What does he weigh? ",
+                "incorrect_answer": [
+                    "110kg",
+                    "65kg",
+                    "NOTA"
+                ],
+                "correct_answer": "Meat",
+                "explanation": ""
+            },
+            {
+                "id": 11,
+                "question": "If you have three, you have three. If you have two, you have two. But, if you have one, you have none. What is it? ",
+                "incorrect_answer": [
+                    "One",
+                    "Two",
+                    "None"
+                ],
+                "correct_answer": "Choices",
+                "explanation": ""
+            },
+            {
+                "id": 12,
+                "question": "How many minutes is it before midnight if 32 minutes ago it was three times as many minutes past 22.00?",
+                "incorrect_answer": [
+                    "32 minutes",
+                    "28 minutes",
+                    "44 minutes"
+                ],
+                "correct_answer": "22 minutes",
+                "explanation": ""
+            },
+            {
+                "id": 13,
+                "question": "If Sally’s daughter is my son’s mother, what relation am I to Sally? (I'm male)?",
+                "incorrect_answer": [
+                    "Son ",
+                    "Brother In Law ",
+                    "Father"
+                ],
+                "correct_answer": "Son In Law ",
+                "explanation": ""
+            }
+        ]
+    },
+    {
+        "category": "Arithmetics",
+        "type": "multiple",
+        "difficulty": "difficult",
+        "data": [
+            {
+                "id": 1,
+                "question": "A chair and a stool cost 140 naira in total. The chair costs 100 naira more than the stool. How much does the stool cost?",
+                "incorrect_answer": [
+                    "40 Naira",
+                    "30 Naira",
+                    "100 Naira"
+                ],
+                "correct_answer": "20 Naira",
+                "explanation": ""
+            },
+            {
+                "id": 2,
+                "question": "2, 10, 12, 60, 62, 310 ... What's next?",
+                "incorrect_answer": [
+                    "260",
+                    "360",
+                    "1260"
+                ],
+                "correct_answer": "312",
+                "explanation": ""
+            },
+            {
+                "id": 3,
+                "question": "2, 4, 8, 16, 32, 64 ... What's next?",
+                "incorrect_answer": [
+                    "90",
+                    "100",
+                    "256"
+                ],
+                "correct_answer": "128",
+                "explanation": ""
+            },
+            {
+                "id": 4,
+                "question": "Mary, who is sixteen years old, is four times as old as her brother. How old will Mary be when she is twice as old as her brother?",
+                "incorrect_answer": [
+                    "20",
+                    "25",
+                    "28"
+                ],
+                "correct_answer": "24",
+                "explanation": ""
+            },
+            {
+                "id": 5,
+                "question": "A man bought a painting for 700$, sold it for 800$, bought it back again for 900$, and sold it again for 1000$. How much profit did he make?",
+                "incorrect_answer": [
+                    "100$",
+                    "300$",
+                    "He did not make any profit"
+                ],
+                "correct_answer": "200$",
+                "explanation": ""
+            },
+            {
+                "id": 6,
+                "question": "If it takes 5 minutes to dry a t-shirt on a clothes wire, how long would it take to dry 5 t-shirts?",
+                "incorrect_answer": [
+                    "10 minutes",
+                    "25 minutes",
+                    "1 hour"
+                ],
+                "correct_answer": "5 minutes",
+                "explanation": ""
+            },
+            {
+                "id": 7,
+                "question": "If A X  B = 2, C X D = 12, B X D = 3, and B X C = 4, what does A X B X C X D equals?",
+                "incorrect_answer": [
+                    "36",
+                    "72",
+                    "288"
+                ],
+                "correct_answer": "24",
+                "explanation": ""
+            },
+            {
+                "id": 8,
+                "question": "83   64   45?? 96   65   34?? What numbers should replace the question marks?",
+                "incorrect_answer": [
+                    "23 , 12",
+                    "12 , 04",
+                    "41 , 13"
+                ],
+                "correct_answer": "26 , 03",
+                "explanation": ""
+            },
+            {
+                "id": 9,
+                "question": "1, 2.25, 3.75, 5.5, 7.5, 9.75,? What number should replace the question mark?",
+                "incorrect_answer": [
+                    "11",
+                    "10.5",
+                    "13.5"
+                ],
+                "correct_answer": "12.5",
+                "explanation": ""
+            },
+            {
+                "id": 10,
+                "question": "1, 31, 59, 85, 109, ?        What number should replace the question mark?",
+                "incorrect_answer": [
+                    "202",
+                    "123",
+                    "121"
+                ],
+                "correct_answer": "131",
+                "explanation": ""
+            },
+            {
+                "id": 11,
+                "question": "When full, a barrel of water contains 85 liters. How many liters remain after 40% has been used?",
+                "incorrect_answer": [
+                    "40 litres",
+                    "34 litres",
+                    "50 litres"
+                ],
+                "correct_answer": "51 litres",
+                "explanation": ""
+            },
+            {
+                "id": 12,
+                "question": "A car travels at a speed of 40 mph over a certain distance and then returns over the same distance at a speed of 60 mph. What is the average speed for the total journey?",
+                "incorrect_answer": [
+                    "50",
+                    "40",
+                    "58"
+                ],
+                "correct_answer": "48",
+                "explanation": ""
+            },
+            {
+                "id": 13,
+                "question": "Add 32 + 8 + 18 + 25.",
+                "incorrect_answer": [
+                    "58",
+                    "78",
+                    "75"
+                ],
+                "correct_answer": "83",
+                "explanation": ""
+            },
+            {
+                "id": 14,
+                "question": "What is 55% of 320?",
+                "incorrect_answer": [
+                    "170",
+                    "172",
+                    "167"
+                ],
+                "correct_answer": "176",
+                "explanation": ""
+            },
+            {
+                "id": 15,
+                "question": "Simplify 5/ 9 of 270?",
+                "incorrect_answer": [
+                    "120",
+                    "125",
+                    "135"
+                ],
+                "correct_answer": "150",
+                "explanation": ""
+            }
+        ]
+    },
+    {
+        "category": "Arithmetics",
+        "type": "multiple",
+        "difficulty": "difficult",
+        "data": [
+            {
+                "id": 1,
+                "question": "Digital is to numbers as analogue is to:",
+                "incorrect_answer": [
+                    "Symbols",
+                    "Time",
+                    "Register"
+                ],
+                "correct_answer": "Hands",
+                "explanation": ""
+            },
+            {
+                "id": 2,
+                "question": "Concept is to notion as fixation is to:",
+                "incorrect_answer": [
+                    "Idea",
+                    "Intuition",
+                    "Apprehension"
+                ],
+                "correct_answer": "Obsession",
+                "explanation": ""
+            },
+            {
+                "id": 3,
+                "question": "Elson’s father has five sons named: First, Second, Third, Fourth and…guess what would be the name of the fifth? ",
+                "incorrect_answer": [
+                    "First",
+                    "Second",
+                    "Fourth"
+                ],
+                "correct_answer": "Elson",
+                "explanation": ""
+            },
+            {
+                "id": 4,
+                "question": "Which of the following is not an anagram of a type of dog?",
+                "incorrect_answer": [
+                    "LOOPED",
+                    "BAG EEL",
+                    "SAIL UK"
+                ],
+                "correct_answer": "NO SLAM",
+                "explanation": ""
+            },
+            {
+                "id": 5,
+                "question": "What is meerschaum?",
+                "incorrect_answer": [
+                    "A prayer said at dawn",
+                    "A nerve-racking experience",
+                    "Way of living"
+                ],
+                "correct_answer": "Hard white mineral",
+                "explanation": ""
+            },
+            {
+                "id": 6,
+                "question": "Hedonism is to pleasure as aestheticism is to:",
+                "incorrect_answer": [
+                    "morality",
+                    "ideas",
+                    "perception"
+                ],
+                "correct_answer": "beauty",
+                "explanation": ""
+            },
+            {
+                "id": 7,
+                "question": "Which is the odd one out?",
+                "incorrect_answer": [
+                    "anther",
+                    "nectar",
+                    "petal"
+                ],
+                "correct_answer": "stigma",
+                "explanation": ""
+            },
+            {
+                "id": 8,
+                "question": "Which word is the odd one out?",
+                "incorrect_answer": [
+                    "auctioneers",
+                    "executioner",
+                    "erroneously"
+                ],
+                "correct_answer": "weaponless",
+                "explanation": "all the other words contain the adjacent letters ONE"
+            },
+            {
+                "id": 9,
+                "question": "Palmate is to hand as auriculate is to: ",
+                "incorrect_answer": [
+                    "nose",
+                    "face",
+                    "smell"
+                ],
+                "correct_answer": "ear",
+                "explanation": ""
+            },
+            {
+                "id": 10,
+                "question": "Which is the odd word out?",
+                "incorrect_answer": [
+                    "orders",
+                    "murder",
+                    "detonator"
+                ],
+                "correct_answer": "derelict",
+                "explanation": "detonator: the rest contain the letters ‘der’ adjacently"
+            },
+            {
+                "id": 11,
+                "question": "Which is the odd one out?",
+                "incorrect_answer": [
+                    "pentad",
+                    "limerick",
+                    "quincunx"
+                ],
+                "correct_answer": "quatrain",
+                "explanation": "quatrain: it is connected with the number four, whilst the rest all have a connection with the number five"
+            },
+            {
+                "id": 12,
+                "question": "Who stopped the killing of twins in Nigeria?",
+                "incorrect_answer": [
+                    "Mary Silas",
+                    "Mary Simeon",
+                    "Margreth Ekpo"
+                ],
+                "correct_answer": "Mary Slessor",
+                "explanation": ""
+            },
+            {
+                "id": 13,
+                "question": "Which of these is not a communicable disease?",
+                "incorrect_answer": [
+                    "Flu",
+                    "Covid-19",
+                    "Tuberculosis"
+                ],
+                "correct_answer": "HIV",
+                "explanation": ""
+            },
+            {
+                "id": 14,
+                "question": "What is the full meaning of SDG’s?",
+                "incorrect_answer": [
+                    "Sustainable development giants",
+                    "Superior diversity goals",
+                    "Sustainable diversity goals"
+                ],
+                "correct_answer": "Sustainable development goals",
+                "explanation": ""
+            }
+        ]
+    },
+    {
+        "category": "Geography",
+        "type": "multiple",
+        "difficulty": "difficult",
+        "data": [
+            {
+                "id": 1,
+                "question": "What is the most spoken language in the world?",
+                "incorrect_answer": [
+                    "English",
+                    "Hindu",
+                    "Spanish"
+                ],
+                "correct_answer": "Mandarin Chinese ",
+                "explanation": ""
+            },
+            {
+                "id": 2,
+                "question": "Which are the two tall mountains in Africa? ",
+                "incorrect_answer": [
+                    "Mount Everest and Mount K2",
+                    "Mount Everest and Mount Kenya ",
+                    "Mount Kilimanjaro and Mount Everest "
+                ],
+                "correct_answer": "Mount Kilimanjaro and Mount Kenya",
+                "explanation": ""
+            },
+            {
+                "id": 3,
+                "question": "What is the largest dam in the world?",
+                "incorrect_answer": [
+                    "Aswan Dam",
+                    "Bratsk Dam",
+                    "Akosombo Dam"
+                ],
+                "correct_answer": "Kariba Dam",
+                "explanation": ""
+            },
+            {
+                "id": 4,
+                "question": "How many time zones are in Africa?",
+                "incorrect_answer": [
+                    "Four",
+                    "Five",
+                    "Seven"
+                ],
+                "correct_answer": "Six",
+                "explanation": ""
+            },
+            {
+                "id": 5,
+                "question": "Which of the following separates Africa from Europe?",
+                "incorrect_answer": [
+                    "Atlantic Ocean",
+                    "Suez Canal",
+                    "Sinai Peninsula"
+                ],
+                "correct_answer": "Mediterranean Sea",
+                "explanation": ""
+            },
+            {
+                "id": 6,
+                "question": "What is the tallest building in the world?",
+                "incorrect_answer": [
+                    "Burj Khalifa",
+                    "Shangai Tower",
+                    "One World Trade Center"
+                ],
+                "correct_answer": "Great Pyramid",
+                "explanation": "GREAT PYRAMID IS THE TALLEST BUILT MAN­-STRUCTURE"
+            },
+
+            {
+                "id": 7,
+                "question": "What is the missing letter in this sequence: A-­Y-­C-­W-­E-­U-­G­?",
+                "incorrect_answer": [
+                    "H",
+                    "T",
+                    "P"
+                ],
+                "correct_answer": "S",
+                "explanation": ""
+            },
+            {
+                "id": 8,
+                "question": "One of these is not an Ex president of Nigeria",
+                "incorrect_answer": [
+                    "Olusegun Obasanjo",
+                    "Musa Ya’ardua",
+                    "Abdulsalami Abubakar"
+                ],
+                "correct_answer": "Wole Soyinka",
+                "explanation": ""
+            }
+        ]
+    }
+]
