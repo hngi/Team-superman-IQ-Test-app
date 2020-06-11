@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^0.5.7+3
+  custom_radio_button: ^0.0.3
   provider:
   google_fonts:
   flutter_spinkit:
@@ -35,6 +36,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -56,6 +58,9 @@ flutter:
     - assets/easy.png
     - assets/hard.png
     - assets/moderate.png
+    - assets/easy.json
+    - assets/moderate.json
+    - assets/hard.json
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

@@ -154,8 +154,8 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
           color: blue,
         ),
         child: Container(
-          // padding: const EdgeInsets.all(8.0),
-          margin: EdgeInsets.all(8.0),
+          padding: EdgeInsets.symmetric(horizontal: 12.0),
+          margin: EdgeInsets.all(4.0),
           child: Column(
             children: <Widget>[
               SizedBox(height: 10),
@@ -175,7 +175,7 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
 
   Widget _textSelectCategory() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(vertical:8.0, horizontal: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[

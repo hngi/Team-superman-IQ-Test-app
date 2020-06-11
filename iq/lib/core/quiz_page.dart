@@ -31,6 +31,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
   SharedPrefs prefs = SharedPrefs();
 
   Future<Quiz> loadQuestions() async {
+
     String data = await rootBundle.loadString('assets/question.json');
     var jsonResult = json.decode(data);
     int jsonIndex = Random().nextInt(3);

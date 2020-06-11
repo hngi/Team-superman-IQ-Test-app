@@ -1,0 +1,733 @@
+[
+
+    {
+        "category": "Arithmetics",
+        "type": "multiple",
+        "difficulty": "easy",
+
+        "question": "What is the highest number known in mathematics?",
+        "correct_answer": "9", 
+        "incorrect_answers":[
+
+            "1,000,000,000",
+            "10",
+            "Uncountable"    
+        ]
+        
+    },
+
+    {
+        "question": "How many fingers (in total) are there in hand?",
+        "correct_answer": "10", 
+        "incorrect_answers":[
+
+                "1",
+                "3",
+                "5"   
+        ]  
+    
+    },
+
+    {
+        "question": "What are the missing numbers in the sequence? 1 _ 3 _ 5 _ 6 _ 8 _ 10.",
+        "correct_answer": "2, 4, 7, 9.", 
+        "incorrect_answers":[
+
+            "1, 3, 5, 10.",
+            "0, 1, 2, 3.",
+            "0, 2, 4, 9."           
+                    ]  
+    
+    },
+
+    {
+        "question": "What is the third number mathematics?",
+        "correct_answer": "3", 
+        "incorrect_answers":[
+            "0",
+            "10",
+            "7"
+
+            
+        ]  
+    
+    },
+
+    {
+        "question": "Which of the following letters represents NORTH-EAST?",
+        "correct_answer": "NE", 
+        "incorrect_answers":[
+
+        
+            "SE",
+            "NW",
+            "SW"
+
+            
+        ]  
+    
+    },
+
+    {
+        "question": "1, 1, 2, 3, 4, 5, 8, 13, 21 - Which one doesn't belong to this series?",
+        "correct_answer": "4", 
+        "incorrect_answers":[
+
+            "1",
+            "2",
+            "13"
+
+            
+        ]  
+    
+    },
+
+    {
+        "question": "121,144,169,196 ... What's next?",
+        "correct_answer": "225", 
+        "incorrect_answers":[
+
+            "260",
+            "298",
+            "310"
+
+            
+        ]  
+    
+    },
+
+    {
+        "question": "Divide 20 by half and add ten. What did you get?",
+        "correct_answer": "70", 
+        "incorrect_answers":[
+
+            "25",
+            "35",
+            "10"            
+        ]  
+    
+    },
+
+    {
+        "question": "2 + 2 X 2…. What do you get?",
+        "correct_answer": "6", 
+        "incorrect_answers":[
+
+            "4",
+            "8",
+            "10"
+
+            
+        ]  
+    
+    },
+
+    {
+        "question": "How many seconds are there in 1hour?",
+        "correct_answer": "3600", 
+        "incorrect_answers":[
+
+
+            "120",
+            "2400",
+            "60"
+                        
+        ]  
+    
+    },
+
+    {
+        "question": "How many grams make a kilogram?",
+        "correct_answer": "1000", 
+        "incorrect_answers":[
+            "10",
+            "100",
+            "10000"
+
+            
+        ]  
+    
+    },
+
+    {
+        "question": "If the length of a square is 5cm, find the perimeter of the square",
+        "correct_answer": "20", 
+        "incorrect_answers":[
+            "5",
+            "10",
+            "50"
+
+            
+        ]  
+    
+    },
+
+    {
+        "question": "An isosceles triangle has",
+        "correct_answer": "Two equal sides", 
+        "incorrect_answers":[
+                    
+            "Three equal sides",
+            "All sides are not equal",
+            "None of the above"
+          
+        ]  
+    
+    },
+
+    {
+        "question": "A hexagon is a",
+        "correct_answer": "Six sided polygon", 
+        "incorrect_answers":[
+            "Five sided polygon",
+            "Four sided polygon",
+            "Seven sided polygon"
+        ]  
+    
+    },
+
+    {
+        "question": "Round off to nearest whole number 129.89",
+        "correct_answer": "130", 
+        "incorrect_answers":[
+            "129",
+            "129.8",
+            "129.9"
+        ]  
+    
+    },
+
+    {
+
+    "category": "cognitive",
+    "type": "multiple",
+    "difficulty": "easy",
+
+    "question": "What is the 10th letter in the alphabet?",
+    "correct_answer": "J",
+    "incorrect_answers": [
+        "K",
+        "F",
+        "Z"
+
+    ]
+
+    },
+
+    {
+    
+    "question": "2. How many letters are there in the English alphabet?",
+    "correct_answer": "26", 
+    "incorrect_answers":[
+        "0",
+        "32",
+        "5"
+                   
+    ]
+
+    },
+
+    {
+    
+    "question": "The English Alphabet consists of ____ vowels.",
+    "correct_answer": "5", 
+    "incorrect_answers":[
+        "0",
+        "7",
+        "26"                  
+    ]
+
+    },
+
+    {
+    
+    "question": "The English alphabet consists of ____ consonants?",
+    "correct_answer": "21", 
+    "incorrect_answers":[
+        "26",
+        "7",
+        "5"
+                    
+    ]
+
+    },
+
+    {
+    
+    "question": "The English alphabets is made up of _________ and ____________ ",
+    "correct_answer": "Vowels and Consonants", 
+    "incorrect_answers":[
+        "Bread and Tea",
+        "A and B",
+        "Y and Z"                  
+    ]
+
+    },
+
+    {
+    
+    "question": "Which number is odd?",
+    "correct_answer": "Seven", 
+    "incorrect_answers":[
+
+        "Twenty ",
+        "Forty­two ",
+        "Six "                   
+    ]
+
+    },
+
+    {
+    
+    "question": "How many two cents stamps are there in a dozen?",
+    "correct_answer": "12", 
+    "incorrect_answers":[
+        "1",
+        "4",
+        "6"                  
+    ]
+
+    },
+
+    {
+    
+    "question": "Take two apples from three apples. What do you have?",
+    "correct_answer": "Two", 
+    "incorrect_answers":[
+        "None",
+        "Three",
+        "One"                   
+    ]
+
+    },
+
+    {
+    
+    "question": "Some months have 31 days, others have 30 days, but how many have 28 days?",
+    "correct_answer": "1", 
+    "incorrect_answers":[
+        "6",
+        "none",
+        "all"                   
+    ]
+
+    },
+
+    {
+    
+    "question": "Which colour is not in the rainbow?",
+    "correct_answer": "Ash", 
+    "incorrect_answers":[
+        "Red ",
+        "Orange ",
+        "Green "
+    ]
+
+    },
+
+    {
+    
+    "question": "What are the four cardinal points?",
+    "correct_answer": "North, South, East, West", 
+    "incorrect_answers":[
+        "North, South, Central, Jupiter",
+        "East, West, Central, South",
+        "North, South, Eest, West"                   
+    ]
+
+    },
+
+    {
+    
+    "question": "Which of these is not a raw material",
+    "correct_answer": "Condensed Milk", 
+    "incorrect_answers":[
+        "Cocoa",
+        "Crude oil",
+        "Cotton"                  
+    ]
+
+    },
+
+    {
+    
+    "question": "Crude oil is to petrol as Cocoa is to",
+    "correct_answer": "Chocolates", 
+    "incorrect_answers":[
+        "Pasta",
+        "Rice",
+        "Juice"                 
+    ]
+
+    },
+
+    {
+    
+    "question": "One of these is not a type of manure",
+    "correct_answer": "Aquatic animals", 
+    "incorrect_answers":[
+        "Fish",
+        "Crocodile",
+        "Hippopotamus"                  
+    ]
+
+    },
+
+    {
+
+        "category": "Geography",
+        "type": "multiple",
+        "difficulty": "easy",
+
+        "question": "Which is not a river in Africa",
+        "correct_answer": "Atlantic ocean", 
+        "incorrect_answers":[
+
+            "Nile river",
+            "Congo river",
+            "Niger river"       
+            
+        ]
+
+    },
+
+    {
+        "question": "Which is the largest country in Africa",
+        "correct_answer": "Nigeria",
+        "incorrect_answers": [
+            "Algeria ",
+            "Ghana ",
+            "Mali "
+
+        ]
+    },
+
+    {
+        "question": "How many continents are there in the world?",
+        "correct_answer": "7",
+        "incorrect_answers": [
+            "15 ",
+            "20 ",
+            "100 "
+
+        ]
+    },
+
+    {
+        "question": "Who’s the current President of Nigeria?",
+        "correct_answer": "General Mohammod Buhari",
+        "incorrect_answers": [
+
+            "Donald J. Trump",
+            "Dr. Qozeem Odeniran",
+            "Dev. Seyi Onifade"
+
+        ]
+    },
+
+    {
+        "question": "How many planets do we have?",
+        "correct_answer": "9",
+        "incorrect_answers": [
+            "7",
+            "8",
+            "12"
+
+        ]
+    },
+
+
+    {
+        "question": "Which planet do we live in?",
+        "correct_answer": "Earth",
+        "incorrect_answers": [
+            "Mars ",
+            "Pluto ",
+            "Venus "
+
+        ]
+    },
+
+    {
+        "question": "What is the largest continent in the world?",
+        "correct_answer": "Asia",
+        "incorrect_answers": [
+            "Antarctica ",
+            "Africa ",
+            "Europe"
+
+        ]
+    },
+
+
+    {
+        "question": "Which is not a primary colour?",
+        "correct_answer": "Green",
+        "incorrect_answers": [
+            "Red ",
+            "Yellow ",
+            "Blue "
+        ]
+    },
+
+    {
+        "question": "What is the capital city of Nigeria?",
+        "correct_answer": "Abuja",
+        "incorrect_answers": [
+            "Lagos",
+            "Kano",
+            "Enugu"
+
+        ]
+    },
+
+
+    {
+        "question": "How many states are there in Nigeria?",
+        "correct_answer": "36",
+        "incorrect_answers": [
+            "35",
+            "37",
+            "38"
+
+        ]
+    },
+
+    {
+        "question": "What is the capital of Lagos state?",
+        "correct_answer": "Ikeja",
+        "incorrect_answers": [
+            "Magodo",
+            "Osogbo",
+            "FCT"
+
+        ]
+    },
+
+
+    {
+        "question": "Which state is known as “the food basket of the nation”?",
+        "correct_answer": "Benue",
+        "incorrect_answers": [
+            "Borno",
+            "Benin",
+            "Bayelsa"
+
+        ]
+    },
+
+    {
+        "question": "The first man to walk on the moon is",
+        "correct_answer": "Neil Armstrong",
+        "incorrect_answers": [
+
+            "Martin Luther King jr",
+            "George Bush",
+            "Neal Armstrong"
+
+        ]
+    },
+
+
+    {
+        "question": "What is the full meaning of the USA?",
+        "correct_answer": "United States of America",
+        "incorrect_answers": [
+            "United States of Arab",
+            "United States of Angola",
+            "Union States of Africa"
+            
+
+        ]
+    },
+
+    {
+        "question": "Which is the hottest?",
+        "correct_answer": "Fire",
+        "incorrect_answers": [
+            "Ice ",
+            "Rain ",
+            "Wind "
+        ]
+    },
+
+
+    {
+        "category": "general",
+        "type": "multiple",
+        "difficulty": "easy",
+
+        "question": "The blood is made up of what color?",
+        "correct_answer": "Red",
+        "incorrect_answers": [
+            "Purple",
+            "Pink",
+            "Yellow"
+
+        ]
+    },
+
+    {
+        "question": "What part of the body is used for seeing?",
+        "correct_answer": "Eyes",
+        "incorrect_answers": [
+
+            "Head",
+            "Shoulder",
+            "Knee"
+        ]
+    },
+
+
+    {
+        "question": "Which of the following is a state in Nigeria?",
+        "correct_answer": "Kwara",
+        "incorrect_answers": [
+            "New York",
+            "Algeria",
+            "Ghana"
+
+        ]
+    },
+
+    {
+        "question": "Mom and Dad are also known as ________",
+        "correct_answer": "Parents",
+        "incorrect_answers": [
+            "Guardians",
+            "Mentors",
+            "Producers"
+
+        ]
+    },
+
+    {
+        "question": "Your mother’s brother’s only brother-in-law is asleep on your couch. Who is asleep on your couch?",
+        "correct_answer": "Your father",
+        "incorrect_answers": [
+            "Your brother",
+            "Your cousin",
+            "Your Brother-in-law"
+        ]
+    },
+
+
+    {
+        "question": "What colour will I mix to get orange?",
+        "correct_answer": "Red and Yellow",
+        "incorrect_answers": [
+            "White and Red",
+            "Green and Black",
+            "Blue and Purple"
+
+        ]
+    },
+
+    {
+        "question": "What will I do when  I am wearing my top?",
+        "correct_answer": "Wear over my head",
+        "incorrect_answers": [
+
+            "Wear it through my legs",
+            "Wear it inside out",
+            "Wear a wet top"
+
+        ]
+    },
+
+
+    {
+        "question": "If your house was on fire, what would you do first?",
+        "correct_answer": "Shout for help",
+        "incorrect_answers": [
+            "Allow yourself burn",
+            "Continue sleeping",
+            "Ignore the fire"
+
+        ]
+    },
+
+
+    {
+        "question": "What’s the world’s fastest animal?",
+        "correct_answer": "Cheetah",
+        "incorrect_answers": [
+            "Elephant",
+            "Ant",
+            "Bird"
+
+        ]
+    },
+
+    {
+        "question": "Birds lay what?",
+        "correct_answer": "Eggs",
+        "incorrect_answers": [
+            "Fruits",
+            "Chips",
+            "Nuts"
+
+        ]
+    },
+
+
+    {
+        "question": "How many classes of food do we have",
+        "correct_answer": "6",
+        "incorrect_answers": [
+            "4",
+            "7",
+            "5"
+
+        ]
+    },
+
+
+    {
+        "question": "An example of Protein is",
+        "correct_answer": "Beans",
+        "incorrect_answers": [
+            "Bread",
+            "Jam",
+            "Chocolate"
+
+        ]
+    },
+
+    {
+        "question": "What are energy giving foods?",
+        "correct_answer": "Carbohydrates",
+        "incorrect_answers": [
+
+            "Proteins",
+            "Vitamins",
+            "Calcium"
+
+        ]
+    },
+
+
+    {
+        "question": " Which of these is not a wild animal?",
+        "correct_answer": "Dog",
+        "incorrect_answers": [
+            "Lion",
+            "Leopard",
+            "Tiger"
+
+        ]
+    },
+
+
+    {
+        "question": "A nuclear family is made up of",
+        "correct_answer": "Parents and children",
+        "incorrect_answers": [
+            "Grandparents, parents and children",
+            "Uncles, grandparents and children",
+            "Uncles, parents and children"
+
+        ]
+    }
+]
+
