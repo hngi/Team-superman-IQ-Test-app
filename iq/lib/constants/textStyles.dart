@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 var welcomeTextStyle = GoogleFonts.poppins(fontSize: 24,);
 var quoteStyle = GoogleFonts.poppins(
-    fontSize: 20, color: textQuoteColor, letterSpacing: 1, height: 1.2);
+    fontSize: 16, color: textQuoteColor, letterSpacing: 1, height: 1.2);
 var quoteAuthorStyle = GoogleFonts.poppins(fontSize: 16, color: textQuoteColor);
 var selectCategory = GoogleFonts.poppins(
     fontSize: 18,
