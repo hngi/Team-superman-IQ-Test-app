@@ -39,31 +39,54 @@ class _ScoreBoardState extends State<ScoreBoard> {
                 context, MaterialPageRoute(builder: (context) => MyHomePage()));
           },
           label: Text('Back to Home')),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal:48.0),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 200),
+        child: Container(
+          // color: Colors.red,
+          child: Center(
+              child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 48.0),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  username ?? '',
+                  username ?? 'Player',
                   style: GoogleFonts.aBeeZee(
                       fontSize: 50, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
                 Text(
-                  'You got ${mark.toString() ?? 0.toString()} questions correctly'
-                  '',
-                  style: GoogleFonts.aBeeZee(
-                      fontSize: 30, fontWeight: FontWeight.bold),
-                ),
+                    'You got ${mark.toString() ?? 0.toString()} questions correctly',
+                    style: GoogleFonts.aBeeZee(
+                        fontSize: 24, fontWeight: FontWeight.bold),
+                    )
               ],
             ),
-          ),
+          )),
         ),
       ),
     );
   }
 }
+
+// SingleChildScrollView(
+//             child: Align(
+//               alignment: Alignment.center,
+//               child: Column(
+//                 // mainAxisAlignment: MainAxisAlignment.start,
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//                 children: <Widget>[
+//                   Text(
+//                     username ?? '',
+//                     style: GoogleFonts.aBeeZee(
+//                         fontSize: 50, fontWeight: FontWeight.bold),
+//                   ),
+//                   SizedBox(height: 10),
+//                   Text(
+//                    'You got ${mark.toString() ?? 0.toString()} questions correctly'
+//                     '',
+//                     style: GoogleFonts.aBeeZee(
+//                         fontSize: 30, fontWeight: FontWeight.bold),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),

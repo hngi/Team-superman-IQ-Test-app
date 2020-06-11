@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:example/bottombar.dart';
 import 'package:example/categories/utilities.dart';
+import 'package:example/database/db.dart';
+import 'package:example/database/models.dart';
 import 'package:example/showScore.dart';
 import 'package:example/state/theme.dart';
 import 'package:example/state/themeNotifier.dart';
@@ -293,6 +295,12 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
                                           );
                                         } else {
                                           await prefs.setmark(mark);
+                                          String name = await prefs.getname();
+
+                                          ScoreDatabase.db.newScore(Score(
+                                            name: name ?? 'Player',
+                                            mark: mark
+                                          ));
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
