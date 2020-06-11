@@ -31,8 +31,14 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
   SharedPrefs prefs = SharedPrefs();
 
   Future<Quiz> loadQuestions() async {
-
-    String data = await rootBundle.loadString('assets/question.json');
+    String data;
+    if(widget.category == "Easy"){
+      data = await rootBundle.loadString('assets/easy.json');
+    }else if(widget.category == "Moderate"){
+      data = await rootBundle.loadString('assets/moderate.json');
+    }else if(widget.category == "Hard"){
+      data = await rootBundle.loadString('assets/hard.json');
+    }
     var jsonResult = json.decode(data);
     int jsonIndex = Random().nextInt(3);
     switch (jsonIndex) {
@@ -57,6 +63,13 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     prepareUI();
+    final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
+    _darkTheme = (themeNotifier.getTheme() == darkTheme);
+    if(_darkTheme){
+      durationColor = Colors.white;
+    }else{
+      durationColor = Colors.black;
+    }
     if (widget.timed) {
       initTimer();
     }
