@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage>{
                   backgroundColor: Colors.transparent,
                   items: <BottomNavigationBarItem>[
                     _bottomNavigationBarItem("Home", 0),
-                    _bottomNavigationBarItem("High Score", 1),
+                    _bottomNavigationBarItem("Scores", 1),
                     _bottomNavigationBarItem("Settings", 2),
                   ],
                 ),
