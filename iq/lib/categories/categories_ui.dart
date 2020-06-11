@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'utilities.dart';
+import 'dart:math';
 
 class ButtonImplementation extends StatefulWidget {
   final SharedPrefs sharedPrefs;
@@ -24,22 +25,29 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
   bool isTimed = false;
   var key = "nil";
   String category;
+  String element;
 
-  
+  static final _random = Random();
+
   String username;
 
-  void getName() async{
+  void getName() async {
     String name = await prefs.getname();
+    bool timed = await prefs.getIsTimed();
     setState(() {
       username = name;
+      isTimed = timed;
     });
   }
-
 
   @override
   void initState() {
     prefs = widget.sharedPrefs;
     getName();
+    var _element = quote[_random.nextInt(quote.length)];
+    setState(() {
+      element = _element;
+    });
     super.initState();
   }
 
@@ -63,7 +71,8 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
         body: SafeArea(
           child: Column(
             children: <Widget>[
-              _profileIcon(),
+              // _profileIcon(),
+              SizedBox(height: 20),
               _welcomeText(),
               SizedBox(height: 10),
               _quoteBlock(height, width),
@@ -153,21 +162,9 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
         decoration: BoxDecoration(
           color: blue,
         ),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 12.0),
-          margin: EdgeInsets.all(4.0),
-          child: Column(
-            children: <Widget>[
-              SizedBox(height: 10),
-              Expanded(child: _textQuote()),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  _textQuoteAuthor(),
-                ],
-              ),
-            ],
-          ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Center(child: _textQuote()),
         ),
       ),
     );
@@ -175,7 +172,7 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
 
   Widget _textSelectCategory() {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical:8.0, horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -208,16 +205,14 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
           text: TextSpan(
               text: textGreeting,
               style: GoogleFonts.poppins(
-                    fontSize: 25,
-                    color: _darkTheme ? Colors.white : Colors.black
-                  ),
+                  fontSize: 25,
+                  color: _darkTheme ? Colors.white : Colors.black),
               children: <TextSpan>[
                 TextSpan(
-                  text: username != null ?username + '!' : playerName,
+                  text: username != null ? username + '!' : playerName,
                   style: GoogleFonts.poppins(
-                    fontSize: 25,
-                    color: _darkTheme ? Colors.white : Colors.black
-                  ),
+                      fontSize: 25,
+                      color: _darkTheme ? Colors.white : Colors.black),
                 )
               ]),
         ),
@@ -227,7 +222,7 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
 
   Widget _textQuote() {
     return Text(
-      quote,
+      element,
       style: quoteStyle,
     );
   }
@@ -289,8 +284,32 @@ class _CategoryOptionsState extends State<CategoryOptions> {
             onTap: () async {
               bool timed = await prefs.getIsTimed();
               print(timed);
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => QuizPage(timed: true, category: widget.title,)));
+              if (widget.title == 'Easy') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => QuizPage(
+                              timed: timed,
+                              category: 'Easy',
+                            )));
+              } else if (widget.title == 'Moderate') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => QuizPage(
+                              timed: timed,
+                              category: 'Moderate',
+                            )));
+              } else {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => QuizPage(
+                              timed: timed,
+                              category: 'Hard',
+                            )));
+              }
+
               // /**
               //    * Replace '/quizpage with the correct route to be navigated after category is chosen
               //    */
