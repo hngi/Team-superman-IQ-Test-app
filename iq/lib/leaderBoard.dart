@@ -29,11 +29,24 @@ class _LeaderState extends State<Leader> {
   int highest;
   int lowest;
   var _darkTheme;
+  bool empty = false;
 
   @override
   void initState() {
     _something();
+    _button();
     super.initState();
+  }
+
+  void _button() {
+    db.getAllClients().then((scores) => {
+          if (scores.isEmpty)
+            {
+              setState(() {
+                empty = true;
+              })
+            }
+        });
   }
 
   void _something() {
@@ -60,16 +73,15 @@ class _LeaderState extends State<Leader> {
     final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
     _darkTheme = (themeNotifier.getTheme() == darkTheme);
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
-        
-        onPressed: () async{
-          Scaffold.of(context).showSnackBar(SnackBar(
-            // duration: Duration(seconds: 3),
-            content: Text('Select Difficulty level'),
-          ));
-          // Navigator.push(context, CupertinoPageRoute(builder: (context) => MyHomePage()));
-        }, 
-        label: Text('Play another')),
+        floatingActionButton: FloatingActionButton.extended(
+            onPressed: () async {
+              Scaffold.of(context).showSnackBar(SnackBar(
+                // duration: Duration(seconds: 3),
+                content: Text('Select Difficulty level'),
+              ));
+              // Navigator.push(context, CupertinoPageRoute(builder: (context) => MyHomePage()));
+            },
+            label: Text(empty == false ? 'Play another' : 'Play A Game')),
         appBar: AppBar(
             title: Text(
               'Scores',
@@ -136,10 +148,14 @@ class _LeaderState extends State<Leader> {
                           onTap: () {},
                           child: Card(
                             color: snapshot.data[index].mark == highest
-                                ? _darkTheme ? Colors.green[800] : Colors.green[400]
+                                ? _darkTheme
+                                    ? Colors.green[800]
+                                    : Colors.green[400]
                                 : snapshot.data[index].mark == lowest
-                                    ? _darkTheme ? Colors.red[800]: Colors.red
-                                    : _darkTheme ? Colors.black54 : Colors.white,
+                                    ? _darkTheme ? Colors.red[800] : Colors.red
+                                    : _darkTheme
+                                        ? Colors.black54
+                                        : Colors.white,
                             child: ListTile(
                                 title: Text(
                                   snapshot.data[index].name,
@@ -156,7 +172,8 @@ class _LeaderState extends State<Leader> {
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 trailing: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: <Widget>[
                                     Text(
@@ -165,10 +182,11 @@ class _LeaderState extends State<Leader> {
                                           fontSize: 22,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    Text('Swipe to delete >>>',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w300
-                                    ),)
+                                    Text(
+                                      'Swipe to delete >>>',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w300),
+                                    )
                                   ],
                                 )),
                           ),
