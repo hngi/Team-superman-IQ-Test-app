@@ -1,50 +1,46 @@
+import 'package:example/bottombar.dart';
+import 'package:example/core/quiz_page.dart';
+import 'package:example/entrance.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:provider/provider.dart';
+
+
+import 'splashTest.dart';
+import 'state/theme.dart';
+import 'state/themeNotifier.dart';
+
+
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]).then((_) {
+    SharedPreferences.getInstance().then((prefs) {
+      var darkModeOn = prefs.getBool('darkMode') ?? true;
+      runApp(
+        ChangeNotifierProvider<ThemeNotifier>(
+          create: (_) => ThemeNotifier(darkModeOn ? darkTheme : lightTheme),
+          child: MyApp(),
+        ),
+      );
+    });
+  });
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _MyAppState();
-  }
-}
-class _MyAppState extends State<MyApp> {
-  
-  void answerquestion() {
-    setState(() {} );
-    print ("answer chosen");
-  }
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('flutter'),
-        ),
-        body: Column(
-          children: <Widget>[
-            Text('The question'),
-            RaisedButton(
-              child: Text('answer 1'),
-              onPressed: answerquestion,
-            ),
-            RaisedButton(
-              child: Text('answer 2'),
-              onPressed: () {
-                //..
-                print ('answer 2 chosen');
-              },
-            ),
-            RaisedButton(
-              child: Text('answer 3'),
-              onPressed: answerquestion,
-            ),
-          ],
-        ),
-      ),
+    return Consumer<ThemeNotifier>(
+      builder: (context, themeNotifier, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: themeNotifier.getTheme(),
+          home: SplashTest()
+        );
+      },
     );
   }
 }
