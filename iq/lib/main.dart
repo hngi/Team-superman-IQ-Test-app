@@ -8,11 +8,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:provider/provider.dart';
 
-
 import 'splashTest.dart';
 import 'state/theme.dart';
 import 'state/themeNotifier.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +36,11 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'HigherIQ',
           theme: themeNotifier.getTheme(),
-          home: SplashTest()
+          home: SplashTest(),
+          routes: <String, WidgetBuilder>{
+            '/home': (BuildContext context) => new MyHomePage(),
+            '/entrance': (BuildContext context) => new Entrance(),
+          },
         );
       },
     );
