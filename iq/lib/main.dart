@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       builder: (context, themeNotifier, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'HigherIQ',
           theme: themeNotifier.getTheme(),
           home: SplashTest()
         );
