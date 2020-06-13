@@ -13,25 +13,23 @@ class SplashTest extends StatefulWidget {
 }
 
 class _SplashTestState extends State<SplashTest> {
-
   String username;
   @override
   void initState() {
     super.initState();
     getName();
+
+    ///Don't navigate back to splash screen
     Timer(Duration(seconds: 5), () {
-      if(username!= null){
-        Navigator.push(
-          context, MaterialPageRoute(builder: (context) => MyHomePage()));
+      if (username != null) {
+        Navigator.pushReplacementNamed(context, '/home');
       } else {
-        Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Entrance()));
+        Navigator.pushReplacementNamed(context, '/entrance');
       }
-      
     });
   }
 
-  void getName() async{
+  void getName() async {
     String name = await sharedPrefs.getname();
     setState(() {
       username = name;
@@ -77,8 +75,7 @@ class _SplashTestState extends State<SplashTest> {
           height: height * 0.5,
           decoration: BoxDecoration(
               // color: Colors.red,
-              image:
-                  DecorationImage(image: AssetImage('assets/Vector3.png')))),
+              image: DecorationImage(image: AssetImage('assets/Vector3.png')))),
     );
   }
 
