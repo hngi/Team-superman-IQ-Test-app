@@ -34,11 +34,11 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
 
   Future<Quiz> loadQuestions() async {
     String data;
-    if(widget.category == "Easy"){
+    if (widget.category == "Easy") {
       data = await rootBundle.loadString('assets/easy.json');
-    }else if(widget.category == "Moderate"){
+    } else if (widget.category == "Moderate") {
       data = await rootBundle.loadString('assets/moderate.json');
-    }else if(widget.category == "Hard"){
+    } else if (widget.category == "Hard") {
       data = await rootBundle.loadString('assets/hard.json');
     }
     var jsonResult = json.decode(data);
@@ -67,9 +67,9 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
     prepareUI();
     final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
     _darkTheme = (themeNotifier.getTheme() == darkTheme);
-    if(_darkTheme){
+    if (_darkTheme) {
       durationColor = Colors.white;
-    }else{
+    } else {
       durationColor = Colors.black;
     }
     if (widget.timed) {
@@ -87,7 +87,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
       setState(() {
         duration--;
         if (duration < 6) {
-          durationColor = _darkTheme ? Colors.red :Colors.red;
+          durationColor = _darkTheme ? Colors.red : Colors.red;
         }
         if (duration == 0) {
           hasSelectedOption = true;
@@ -151,13 +151,32 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
     });
     if (!usePrevIndices) {
       index = Random().nextInt(questions.length - 1);
+      while (maps[tag].contains(index)) {
+        index = Random().nextInt(questions.length - 1);
+      }
+      maps.update(tag, (value) {
+        List<int> v = value;
+        v.add(index);
+        return v;
+      });
+      print(maps);
     }
   }
+
+  Map<String, List<int>> maps = {
+    "Cognitive": [],
+    "Arithmetics": [],
+    "General": [],
+    "Geography": [],
+  };
+
+  List<int> indices = [];
 
   int questionIndex = 0;
   int mark = 0;
   bool hasSelectedOption = false;
   var _darkTheme;
+
   @override
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
@@ -274,7 +293,9 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
                                         //If it is not the last question, proceed to the next one
                                         if (questionIndex != 19) {
                                           questionTimedOut = false;
-                                          durationColor = _darkTheme ? Colors.white : Colors.black;
+                                          durationColor = _darkTheme
+                                              ? Colors.white
+                                              : Colors.black;
                                           prepareUI();
                                           if (widget.timed) {
                                             timer.cancel();
@@ -287,8 +308,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
                                               int questionNumber =
                                                   questionIndex + 1;
                                               double questionPercent =
-                                                  (100 * questionNumber) /
-                                                      questions.length;
+                                                  (100 * questionNumber) / 20;
                                               percentToRangeOPoint1To1 =
                                                   questionPercent / 100;
                                             },
@@ -298,9 +318,8 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
                                           String name = await prefs.getname();
 
                                           ScoreDatabase.db.newScore(Score(
-                                            name: name ?? 'Player',
-                                            mark: mark
-                                          ));
+                                              name: name ?? 'Player',
+                                              mark: mark));
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -552,12 +571,9 @@ class QuestionOption extends StatefulWidget {
     this.timedOut,
   }) : super(key: key);
 
-  
-
   @override
   _QuestionOptionState createState() => _QuestionOptionState();
 }
-
 
 class _QuestionOptionState extends State<QuestionOption> {
   Color backgroundColor = Colors.transparent;
@@ -600,7 +616,6 @@ class _QuestionOptionState extends State<QuestionOption> {
                     ? Colors.white
                     : backgroundColor == Colors.transparent
                         ? _darkTheme ? Colors.white : Color(0xff525252)
-
                         : Colors.white,
                 fontWeight: FontWeight.w600,
                 fontSize: 18,

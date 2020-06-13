@@ -127,8 +127,14 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
     });
     if(!usePrevIndices){
       index = Random().nextInt(questions.length - 1);
+      while(indices.contains(index)){
+        index = Random().nextInt(questions.length - 1);
+      }
+      indices.add(index);
     }
   }
+
+  List<int> indices = [];
 
   int questionIndex = 0;
   int mark = 0;
@@ -238,6 +244,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
                               alignment: Alignment.centerRight,
                               child: RaisedButton(
                                 onPressed: () {
+
                                   //If it is not the last question, proceed to the next one
                                   if (questionIndex != 19) {
                                     questionTimedOut = false;
@@ -251,10 +258,8 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
                                       () {
                                         hasSelectedOption = false;
                                         questionIndex++;
-                                        int questionNumber = questionIndex + 1;
-                                        double questionPercent =
-                                            (100 * questionNumber) /
-                                                questions.length;
+                                        int questionNumber = questionIndex;
+                                        double questionPercent = (100 * questionNumber) / 20;
                                         percentToRangeOPoint1To1 =
                                             questionPercent / 100;
                                       },
