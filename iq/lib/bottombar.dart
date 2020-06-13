@@ -1,4 +1,4 @@
-import 'package:double_back_to_close_app/double_back_to_close_app.dart';
+
 import 'package:example/categories/categories_ui.dart';
 import 'package:example/categories/utilities.dart';
 import 'package:example/leaderBoard.dart';
