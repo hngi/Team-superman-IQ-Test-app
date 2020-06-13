@@ -63,47 +63,44 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
     _darkTheme = (themeNotifier.getTheme() == darkTheme);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return WillPopScope(
-      onWillPop: () async => false,
-      child: Scaffold(
-        key: scaffoldKey,
-        // backgroundColor: backgroundColor,
-        body: SafeArea(
-          child: Column(
-            children: <Widget>[
-              // _profileIcon(),
-              SizedBox(height: 20),
-              _welcomeText(),
-              SizedBox(height: 10),
-              _quoteBlock(height, width),
-              SizedBox(height: 10.0),
-              _textSelectCategory(),
-              Expanded(
-                  child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Expanded(
-                      child: Container(
-                        width: width,
-                        height: height,
-                        child: GridView.count(
-                          crossAxisCount: 2,
-                          padding: const EdgeInsets.only(right: 18, left: 18),
-                          children: <Widget>[
-                            CategoryOptions(title: 'Easy'),
-                            CategoryOptions(title: 'Moderate'),
-                            CategoryOptions(title: 'Hard'),
-                          ],
-                        ),
+    return Scaffold(
+      key: scaffoldKey,
+      // backgroundColor: backgroundColor,
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            // _profileIcon(),
+            SizedBox(height: 20),
+            _welcomeText(),
+            SizedBox(height: 10),
+            _quoteBlock(height, width),
+            SizedBox(height: 10.0),
+            _textSelectCategory(),
+            Expanded(
+                child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      width: width,
+                      height: height,
+                      child: GridView.count(
+                        crossAxisCount: 2,
+                        padding: const EdgeInsets.only(right: 18, left: 18),
+                        children: <Widget>[
+                          CategoryOptions(title: 'Easy'),
+                          CategoryOptions(title: 'Moderate'),
+                          CategoryOptions(title: 'Hard'),
+                        ],
                       ),
                     ),
-                    _timer(height, width),
-                  ],
-                ),
-              )),
-            ],
-          ),
+                  ),
+                  _timer(height, width),
+                ],
+              ),
+            )),
+          ],
         ),
       ),
     );
