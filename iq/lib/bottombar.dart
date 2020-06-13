@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       return false;
     }
     SystemNavigator.pop();
-    return true;
+    return false;
   }
 
   SharedPrefs sharedPrefs = SharedPrefs();
