@@ -80,28 +80,28 @@ class _ButtonImplementationState extends State<ButtonImplementation> {
               _textSelectCategory(),
               Expanded(
                   child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Expanded(
-                      child: Container(
-                        width: width,
-                        height: height,
-                        child: GridView.count(
-                          crossAxisCount: 2,
-                          padding: const EdgeInsets.only(right: 18, left: 18),
-                          children: <Widget>[
-                            CategoryOptions(title: 'Easy'),
-                            CategoryOptions(title: 'Moderate'),
-                            CategoryOptions(title: 'Hard'),
-                          ],
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Expanded(
+                          child: Container(
+                            width: width,
+                            height: height,
+                            child: GridView.count(
+                              crossAxisCount: 2,
+                              padding: const EdgeInsets.only(right: 18, left: 18),
+                              children: <Widget>[
+                                CategoryOptions(title: 'Easy'),
+                                CategoryOptions(title: 'Moderate'),
+                                CategoryOptions(title: 'Hard'),
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
+                        _timer(height, width),
+                      ],
                     ),
-                    _timer(height, width),
-                  ],
-                ),
-              )),
+                  )),
             ],
           ),
         ),
@@ -289,25 +289,25 @@ class _CategoryOptionsState extends State<CategoryOptions> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => QuizPage(
-                              timed: timed,
-                              category: 'Easy',
-                            )));
+                          timed: timed,
+                          category: 'Easy',
+                        )));
               } else if (widget.title == 'Moderate') {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => QuizPage(
-                              timed: timed,
-                              category: 'Moderate',
-                            )));
+                          timed: timed,
+                          category: 'Moderate',
+                        )));
               } else {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => QuizPage(
-                              timed: timed,
-                              category: 'Hard',
-                            )));
+                          timed: timed,
+                          category: 'Hard',
+                        )));
               }
 
               // /**
@@ -342,8 +342,8 @@ class _CategoryOptionsState extends State<CategoryOptions> {
                             color: this.widget.title == 'Easy'
                                 ? cardEasyColor
                                 : this.widget.title == 'Moderate'
-                                    ? cardModerateColor
-                                    : cardHardColor),
+                                ? cardModerateColor
+                                : cardHardColor),
                       ),
                       _column()
                     ],
@@ -365,13 +365,13 @@ class _CategoryOptionsState extends State<CategoryOptions> {
             width: 100,
             height: 100,
             decoration: BoxDecoration(
-                // color: Colors.red,
+              // color: Colors.red,
                 image: DecorationImage(
                     image: this.widget.title == 'Easy'
                         ? AssetImage('assets/easy.png')
                         : this.widget.title == 'Moderate'
-                            ? AssetImage('assets/moderate.png')
-                            : AssetImage('assets/hard.png'))),
+                        ? AssetImage('assets/moderate.png')
+                        : AssetImage('assets/hard.png'))),
           ),
           Text(
             this.widget.title,

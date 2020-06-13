@@ -40,32 +40,32 @@ class _LeaderState extends State<Leader> {
 
   void _button() {
     db.getAllClients().then((scores) => {
-          if (scores.isEmpty)
-            {
-              setState(() {
-                empty = true;
-              })
-            }
-        });
+      if (scores.isEmpty)
+        {
+          setState(() {
+            empty = true;
+          })
+        }
+    });
   }
 
   void _something() {
     db.getAllClients().then((scores) => {
-          for (var i = 0; i < scores.length; i++)
-            {
-              setState(() {
-                print(scores[i].mark);
-                number.add(scores[i].mark);
-                if (number.isNotEmpty) {
-                  highest = number.reduce(max);
-                  if (number.length > 1) {
-                    lowest = number.reduce(min);
-                  }
-                  print(highest);
-                }
-              })
+      for (var i = 0; i < scores.length; i++)
+        {
+          setState(() {
+            print(scores[i].mark);
+            number.add(scores[i].mark);
+            if (number.isNotEmpty) {
+              highest = number.reduce(max);
+              if (number.length > 1) {
+                lowest = number.reduce(min);
+              }
+              print(highest);
             }
-        });
+          })
+        }
+    });
   }
 
   @override
@@ -149,13 +149,13 @@ class _LeaderState extends State<Leader> {
                           child: Card(
                             color: snapshot.data[index].mark == highest
                                 ? _darkTheme
-                                    ? Colors.green[800]
-                                    : Colors.green[400]
+                                ? Colors.green[800]
+                                : Colors.green[400]
                                 : snapshot.data[index].mark == lowest
-                                    ? _darkTheme ? Colors.red[800] : Colors.red
-                                    : _darkTheme
-                                        ? Colors.black54
-                                        : Colors.white,
+                                ? _darkTheme ? Colors.red[800] : Colors.red
+                                : _darkTheme
+                                ? Colors.black54
+                                : Colors.white,
                             child: ListTile(
                                 title: Text(
                                   snapshot.data[index].name,
@@ -167,13 +167,13 @@ class _LeaderState extends State<Leader> {
                                   snapshot.data[index].mark == highest
                                       ? 'Highest score'
                                       : snapshot.data[index].mark == lowest
-                                          ? 'Lowest score'
-                                          : '',
+                                      ? 'Lowest score'
+                                      : '',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 trailing: Column(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
+                                  MainAxisAlignment.spaceAround,
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: <Widget>[
                                     Text(
