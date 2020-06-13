@@ -373,11 +373,11 @@
                 "id": 2,
                 "question": "Which is the largest country in Africa",
                 "incorrect_answer": [
-                    "Algeria",
+                    "Nigeria",
                     "Ghana",
                     "Mali"
                 ],
-                "correct_answer": "Nigeria",
+                "correct_answer": "Algeria",
                 "explanation": ""
             },
             {
