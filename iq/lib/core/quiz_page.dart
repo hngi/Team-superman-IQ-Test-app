@@ -1,19 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
-import 'package:example/bottombar.dart';
-import 'package:example/categories/utilities.dart';
-import 'package:example/database/db.dart';
-import 'package:example/database/models.dart';
-import 'package:example/showScore.dart';
-import 'package:example/state/theme.dart';
-import 'package:example/state/themeNotifier.dart';
+import 'package:example/core/quiz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
-import 'quiz.dart';
+/*import 'core/quiz.dart';*/
 
 class QuizPage extends StatefulWidget {
   final String category;
@@ -30,17 +23,8 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
 
   String tag;
 
-  SharedPrefs prefs = SharedPrefs();
-
   Future<Quiz> loadQuestions() async {
-    String data;
-    if (widget.category == "Easy") {
-      data = await rootBundle.loadString('assets/easy.json');
-    } else if (widget.category == "Moderate") {
-      data = await rootBundle.loadString('assets/moderate.json');
-    } else if (widget.category == "Hard") {
-      data = await rootBundle.loadString('assets/hard.json');
-    }
+    String data = await rootBundle.loadString('assets/question.json');
     var jsonResult = json.decode(data);
     int jsonIndex = Random().nextInt(3);
     switch (jsonIndex) {
@@ -65,13 +49,6 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     prepareUI();
-    final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
-    _darkTheme = (themeNotifier.getTheme() == darkTheme);
-    if (_darkTheme) {
-      durationColor = Colors.white;
-    } else {
-      durationColor = Colors.black;
-    }
     if (widget.timed) {
       initTimer();
     }
@@ -87,7 +64,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
       setState(() {
         duration--;
         if (duration < 6) {
-          durationColor = _darkTheme ? Colors.red : Colors.red;
+          durationColor = Colors.red;
         }
         if (duration == 0) {
           hasSelectedOption = true;
@@ -109,7 +86,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
   int index;
 
   void prepareUI([usePrevIndices = false]) async {
-    if (!usePrevIndices) {
+    if(!usePrevIndices){
       quiz = await loadQuestions();
     }
     if (!usePrevIndices) {
@@ -120,7 +97,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
     setState(() {
       questions = [];
       quiz.questions.forEach(
-        (element) {
+            (element) {
           questions.add(
             QuestionItem(
               hasSelectedOption: questionTimedOut,
@@ -149,249 +126,175 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
         },
       );
     });
-    if (!usePrevIndices) {
+    if(!usePrevIndices){
       index = Random().nextInt(questions.length - 1);
-      while (maps[tag].contains(index)) {
+      while(indices.contains(index)){
         index = Random().nextInt(questions.length - 1);
       }
-      maps.update(tag, (value) {
-        List<int> v = value;
-        v.add(index);
-        return v;
-      });
-      print(maps);
+      indices.add(index);
     }
   }
-
-  Map<String, List<int>> maps = {
-    "Cognitive": [],
-    "Arithmetics": [],
-    "General": [],
-    "Geography": [],
-  };
 
   List<int> indices = [];
 
   int questionIndex = 0;
   int mark = 0;
   bool hasSelectedOption = false;
-  var _darkTheme;
 
   @override
   Widget build(BuildContext context) {
-    final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
-    _darkTheme = (themeNotifier.getTheme() == darkTheme);
     return Scaffold(
       body: SafeArea(
         child: Container(
-          color: _darkTheme ? Colors.black : Colors.grey[300],
-          child: questions.isNotEmpty
-              ? Column(
+          color: Color(0xffF2F2F2),
+          child: questions.isNotEmpty ? Column(
+            children: <Widget>[
+              SizedBox(height: 10),
+              //Assessment and Eng
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
                   children: <Widget>[
-                    SizedBox(height: 10),
-                    //Assessment and Eng
+                    Text(
+                      "IQ Assessment:",
+                      style: GoogleFonts.poppins(),
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      tag,
+                      style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                    ),
+                    Spacer(),
                     Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      child: Row(
-                        children: <Widget>[
-                          Text(
-                            "IQ Assessment:",
-                            style: GoogleFonts.poppins(),
-                          ),
-                          SizedBox(width: 5),
-                          Text(
-                            tag,
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w600),
-                          ),
-                          Spacer(),
-                          GestureDetector(
-                            onTap: () => showAlertDialog(context),
-                            child: Container(
-                              child: Text(
-                                "End",
-                                style: GoogleFonts.poppins(
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                vertical: 2,
-                                horizontal: 20,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Color(0xffFCC8C8),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-                        ],
+                      child: Text(
+                        "End",
+                        style: GoogleFonts.poppins(
+                            color: Colors.red, fontWeight: FontWeight.w600),
                       ),
-                    ),
-                    SizedBox(height: 3),
-                    LinearProgressIndicator(
-                      backgroundColor: Colors.transparent,
-                      valueColor: AnimationController(vsync: this).drive(
-                        Tween(
-                          begin: Color(0xff90BA7C),
-                          end: Color(0xff90BA7C),
-                        ),
+                      padding: EdgeInsets.symmetric(
+                        vertical: 2,
+                        horizontal: 20,
                       ),
-                      value: percentToRangeOPoint1To1,
-                    ),
-                    Expanded(
-                      child: Container(
-                        color: _darkTheme ? Colors.black : Colors.white,
-                        width: double.maxFinite,
-                        padding: EdgeInsets.all(20),
-                        child: ListView(
-                          physics: BouncingScrollPhysics(),
-                          children: <Widget>[
-                            //Timer and approx
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Color(0xff525252),
-                                      width: 2,
-                                    ),
-                                    shape: BoxShape.circle,
-                                  ),
-                                  width: 45,
-                                  height: 50,
-                                  padding: EdgeInsets.all(10),
-                                  child: Center(
-                                    child: Text(
-                                      "${widget.timed ? duration : "X"}",
-                                      style: GoogleFonts.oswald(
-                                        fontWeight: FontWeight.w600,
-                                        color: durationColor,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "Approximately ${20 - questionIndex - 1} Questions Remaining",
-                                  style: GoogleFonts.poppins(),
-                                )
-                              ],
-                            ),
-                            SizedBox(height: 20),
-
-                            //The Question
-                            questions[index],
-
-                            //The button
-                            hasSelectedOption
-                                ? Align(
-                                    alignment: Alignment.centerRight,
-                                    child: RaisedButton(
-                                      onPressed: () async {
-                                        //If it is not the last question, proceed to the next one
-                                        if (questionIndex != 19) {
-                                          questionTimedOut = false;
-                                          durationColor = _darkTheme
-                                              ? Colors.white
-                                              : Colors.black;
-                                          prepareUI();
-                                          if (widget.timed) {
-                                            timer.cancel();
-                                            initTimer();
-                                          }
-                                          setState(
-                                            () {
-                                              hasSelectedOption = false;
-                                              questionIndex++;
-                                              int questionNumber =
-                                                  questionIndex + 1;
-                                              double questionPercent =
-                                                  (100 * questionNumber) / 20;
-                                              percentToRangeOPoint1To1 =
-                                                  questionPercent / 100;
-                                            },
-                                          );
-                                        } else {
-                                          await prefs.setmark(mark);
-                                          String name = await prefs.getname();
-
-                                          ScoreDatabase.db.newScore(Score(
-                                              name: name ?? 'Player',
-                                              mark: mark));
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      ScoreBoard()));
-                                        }
-                                      },
-                                      color: Color(0xff5982FE),
-                                      child: Text(
-                                        "${questionIndex == 19 ? "Submit" : "Next Question"}",
-                                        style: GoogleFonts.poppins(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 35,
-                                        vertical: 20,
-                                      ),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                    ),
-                                  )
-                                : SizedBox()
-                          ],
-                        ),
+                      decoration: BoxDecoration(
+                        color: Color(0xffFCC8C8),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                   ],
-                )
-              : Center(
-                  child: CircularProgressIndicator(),
                 ),
+              ),
+              SizedBox(height: 3),
+              LinearProgressIndicator(
+                backgroundColor: Colors.transparent,
+                valueColor: AnimationController(vsync: this).drive(
+                  Tween(
+                    begin: Color(0xff90BA7C),
+                    end: Color(0xff90BA7C),
+                  ),
+                ),
+                value: percentToRangeOPoint1To1,
+              ),
+              Expanded(
+                child: Container(
+                  color: Colors.white,
+                  width: double.maxFinite,
+                  padding: EdgeInsets.all(20),
+                  child: ListView(
+                    physics: BouncingScrollPhysics(),
+                    children: <Widget>[
+                      //Timer and approx
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Color(0xff525252),
+                                width: 2,
+                              ),
+                              shape: BoxShape.circle,
+                            ),
+                            width: 45,
+                            height: 50,
+                            padding: EdgeInsets.all(10),
+                            child: Center(
+                              child: Text(
+                                "${widget.timed ? duration : "X"}",
+                                style: GoogleFonts.oswald(
+                                  fontWeight: FontWeight.w600,
+                                  color: durationColor,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Spacer(),
+                          Text(
+                            "Approximately ${20 - questionIndex - 1} Questions Remaining",
+                            style: GoogleFonts.poppins(),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+
+                      //The Question
+                      questions[index],
+
+                      //The button
+                      hasSelectedOption
+                          ? Align(
+                        alignment: Alignment.centerRight,
+                        child: RaisedButton(
+                          onPressed: () {
+
+                            //If it is not the last question, proceed to the next one
+                            if (questionIndex != 19) {
+                              questionTimedOut = false;
+                              durationColor = Colors.black;
+                              prepareUI();
+                              if (widget.timed) {
+                                timer.cancel();
+                                initTimer();
+                              }
+                              setState(
+                                    () {
+                                  hasSelectedOption = false;
+                                  questionIndex++;
+                                  int questionNumber = questionIndex;
+                                  double questionPercent = (100 * questionNumber) / 20;
+                                  percentToRangeOPoint1To1 =
+                                      questionPercent / 100;
+                                },
+                              );
+                            }
+                            //Else submit the mark and the number of questions to dollyp
+                          },
+                          color: Color(0xff5982FE),
+                          child: Text(
+                            "${questionIndex == 19 ? "Submit" : "Next Question"}",
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 20,
+                            ),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 35,
+                            vertical: 20,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                        ),
+                      )
+                          : SizedBox()
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ) : Center(child: CircularProgressIndicator(),),
         ),
       ),
-    );
-  }
-
-  showAlertDialog(BuildContext context) {
-    // set up the buttons
-    Widget cancelButton = FlatButton(
-      child: Text("No"),
-      onPressed: () {
-        Navigator.pop(context);
-      },
-    );
-    Widget continueButton = FlatButton(
-      child: Text("Yes"),
-      onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => MyHomePage()));
-      },
-    );
-
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text("Higher IQ"),
-      content: Text("Do you want to end this Quiz session? "),
-      actions: [
-        cancelButton,
-        continueButton,
-      ],
-    );
-
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
     );
   }
 }
@@ -452,12 +355,8 @@ class _QuestionItemState extends State<QuestionItem> {
 
   bool isClickable = true;
 
-  var _darkTheme;
-
   @override
   Widget build(BuildContext context) {
-    final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
-    _darkTheme = (themeNotifier.getTheme() == darkTheme);
     return IgnorePointer(
       ignoring: !isClickable || widget.hasSelectedOption,
       child: Column(
@@ -466,7 +365,7 @@ class _QuestionItemState extends State<QuestionItem> {
             widget.question.question,
             style: GoogleFonts.poppins(
               fontSize: 18.5,
-              color: _darkTheme ? Colors.white : Color(0xff525252),
+              color: Color(0xff525252),
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -474,17 +373,17 @@ class _QuestionItemState extends State<QuestionItem> {
           Column(
             children: List.generate(
               widget.question.incorrectAnswer.length + 1,
-              (index) {
+                  (index) {
                 if (indices[index] == widget.question.incorrectAnswer.length) {
                   return QuestionOption(
                     isAnswer: true,
                     onTap: isClickable
                         ? (_) {
-                            setState(() {
-                              isClickable = false;
-                              widget.onOptionSelected(true);
-                            });
-                          }
+                      setState(() {
+                        isClickable = false;
+                        widget.onOptionSelected(true);
+                      });
+                    }
                         : (_) {},
                     timedOut: widget.timedOut,
                     wrongAnswerSelected: wrongAnswerSelected,
@@ -495,12 +394,12 @@ class _QuestionItemState extends State<QuestionItem> {
                   isAnswer: false,
                   onTap: isClickable
                       ? (_) {
-                          setState(() {
-                            isClickable = false;
-                            widget.onOptionSelected(false);
-                            wrongAnswerSelected = true;
-                          });
-                        }
+                    setState(() {
+                      isClickable = false;
+                      widget.onOptionSelected(false);
+                      wrongAnswerSelected = true;
+                    });
+                  }
                       : (_) {},
                   timedOut: false,
                   wrongAnswerSelected: true,
@@ -510,44 +409,44 @@ class _QuestionItemState extends State<QuestionItem> {
             ),
           ),
           widget.question.explanation.isNotEmpty &&
-                  (!isClickable || widget.hasSelectedOption)
+              (!isClickable || widget.hasSelectedOption)
               ? Column(
-                  children: <Widget>[
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Explanation",
-                        style: GoogleFonts.poppins(
-                          color: _darkTheme ? Colors.white : Color(0xff525252),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    Container(
-                      width: double.maxFinite,
-                      padding: EdgeInsets.all(17),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Color(0xff7CBE82),
-                          width: 1.7,
-                        ),
-                        color: Color(0xff7CBE82),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: Text(
-                        widget.question.explanation,
-                        style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 30),
-                  ],
-                )
+            children: <Widget>[
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Explanation",
+                  style: GoogleFonts.poppins(
+                    color: Color(0xff525252),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                width: double.maxFinite,
+                padding: EdgeInsets.all(17),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Color(0xff7CBE82),
+                    width: 1.7,
+                  ),
+                  color: Color(0xff7CBE82),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Text(
+                  widget.question.explanation,
+                  style: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
+            ],
+          )
               : SizedBox(),
         ],
       ),
@@ -577,12 +476,9 @@ class QuestionOption extends StatefulWidget {
 
 class _QuestionOptionState extends State<QuestionOption> {
   Color backgroundColor = Colors.transparent;
-  var _darkTheme;
 
   @override
   Widget build(BuildContext context) {
-    final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
-    _darkTheme = (themeNotifier.getTheme() == darkTheme);
     return GestureDetector(
       onTap: () {
         widget.onTap(widget.isAnswer);
@@ -615,8 +511,8 @@ class _QuestionOptionState extends State<QuestionOption> {
                 color: widget.timedOut
                     ? Colors.white
                     : backgroundColor == Colors.transparent
-                        ? _darkTheme ? Colors.white : Color(0xff525252)
-                        : Colors.white,
+                    ? Color(0xff525252)
+                    : Colors.white,
                 fontWeight: FontWeight.w600,
                 fontSize: 18,
               ),
