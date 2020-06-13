@@ -1,7 +1,7 @@
 String textGreeting = 'Hi ';
 String playerName = 'Player! ';
 String selectACategory = 'Select Quiz Category';
-String textWelcome = 'Nice to have you back!';
+String textWelcome = 'Nice to have you here!';
 List quote = [
   'Learning at least 3 times a day can boost your IQ by 10%',
   'IQ is the number of symbols you can process at the same time',
