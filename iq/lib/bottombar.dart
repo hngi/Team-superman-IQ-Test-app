@@ -6,6 +6,7 @@ import 'package:example/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -57,8 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
       scaffoldKey.currentState.showSnackBar(snackBar);
       return false;
     }
-
-    return true;
+    SystemNavigator.pop();
+    return false;
   }
 
   SharedPrefs sharedPrefs = SharedPrefs();
