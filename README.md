@@ -1,5 +1,9 @@
-# Team-superman-IQ-Test-app
+# IQ-Test-app
 team superman app
+There are three categories which includes easy, moderate and difficult. These categories helps test how intelligent you are.
+Also we have the high scores section that shows you result from previous test you had done before and also shows
+your most recent result with the high scores you have
+There is also an option of changing from a dark mode to a light mode.
 To contribute to this repo:
 
 create a personal fork of the project repo on Github.
