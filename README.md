@@ -1,4 +1,4 @@
-# IQ-Test-app
+# sannydevelopers
 team superman app
 There are three categories which includes easy, moderate and difficult. These categories helps test how intelligent you are.
 Also we have the high scores section that shows you result from previous test you had done before and also shows
@@ -25,3 +25,4 @@ From your fork open a pull request in the correct branch. Target the project's d
 To keep to update with the main repo, be sure to pull upstream changes into your local repository. This way you don't miss changes
 
 $ git pull upstream development
+https://sanydevelopers.online/
